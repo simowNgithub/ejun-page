@@ -1,0 +1,258 @@
+﻿<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bürgerinitiative EjUn</title>
+  <meta name="description" content="Informationen der Bürgerinitiative mit aktuellem Hauptthema und News-Timeline." />
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,800;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="hero hero-full">
+    <div class="hero-full-inner">
+      <img class="hero-logo" src="logo.svg" alt="Logo Bürgerinitiative EjUn" />
+      <h1>
+        Energiewende <span class="word-yes">ja</span>, Umzingelung <span class="word-no">nein</span>
+      </h1>
+      <a class="cta-button hero-support-btn" href="#reg-email" aria-label="Jetzt unterstützen und direkt E-Mail eingeben">
+        <span class="hero-support-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 11C10.2091 11 12 9.20914 12 7C12 4.79086 10.2091 3 8 3C5.79086 3 4 4.79086 4 7C4 9.20914 5.79086 11 8 11ZM8 9C9.10457 9 10 8.10457 10 7C10 5.89543 9.10457 5 8 5C6.89543 5 6 5.89543 6 7C6 8.10457 6.89543 9 8 9Z"></path>
+            <path d="M11 14C11.5523 14 12 14.4477 12 15V21H14V15C14 13.3431 12.6569 12 11 12H5C3.34315 12 2 13.3431 2 15V21H4V15C4 14.4477 4.44772 14 5 14H11Z"></path>
+            <path d="M18 7H20V9H22V11H20V13H18V11H16V9H18V7Z"></path>
+          </svg>
+        </span>
+        <span class="hero-support-text">Unterstützen</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="problem card" aria-labelledby="problem-title">
+      <h2 id="problem-title">Hauptproblem: Umzingelung durch Windkraftprojekte</h2>
+      <a class="problem-visual-link" href="https://karte.buergerinitiative-ejun.de/" target="_blank" rel="noopener noreferrer">
+        <img class="problem-visual" src="assets/visualisierung-umzingelung.jpg" alt="Visualisierung der Umzingelung in der Region - zur interaktiven Karte" loading="lazy" />
+      </a>
+      <p>
+        Die Initiative unterstützt die Energiewende, sieht aber im Raum Franken-Neuhofen / Labertal eine kritische Ballung geplanter und bestehender
+        Windkraftanlagen. Aus Sicht der Betroffenen führt das zu einer zunehmenden Umzingelung von Ortschaften und zu einem hohen Druck auf Landschaft und Lebensumfeld.
+      </p>
+
+      <h3>Details</h3>
+      <ul>
+        <li>Bereits bestehende und geplante Anlagen führen aus Sicht vieler Anwohner zu einer räumlichen Umfassung einzelner Orte.</li>
+        <li>Durch neue Windvorrangflächen wird ein Verlust kommunaler Steuerungs- und Zustimmungsmöglichkeiten befürchtet.</li>
+        <li>Die Initiative verweist auf Petition WI.0084.19 und weitere Stellungnahmen zu den regionalen Planungen.</li>
+        <li>Diskutiert werden Auswirkungen auf Landschaftsbild, Akzeptanz, Naturräume und den lokalen sozialen Zusammenhalt.</li>
+      </ul>
+
+      <h3>Position und Forderungen</h3>
+      <ul>
+        <li>Keine unzumutbare Umzingelung einzelner Orte durch weitere Verdichtung von Windparks.</li>
+        <li>Nachvollziehbare Planung mit frühzeitiger Beteiligung von Bürgern und Kommunen.</li>
+        <li>Prüfung von Alternativen, z. B. Netzstabilisierung und regionale Speicherlösungen.</li>
+      </ul>
+
+      <h3>Kontakt</h3>
+      <p>
+        E-Mail: <a href="mailto:kontakt@buergerinitiative-ejun.de">kontakt@buergerinitiative-ejun.de</a><br />
+        Mehr Dokumente: <a href="https://www.buergerinitiative-ejun.de/docs" target="_blank" rel="noopener noreferrer">buergerinitiative-ejun.de/docs</a>
+      </p>
+    </section>
+
+    <aside class="timeline card" aria-labelledby="news-title">
+      <div class="timeline-head">
+        <h2 id="news-title">News</h2>
+        <p>Kurz & chronologisch</p>
+      </div>
+      <ol id="news-list" class="news-list" aria-live="polite"></ol>
+    </aside>
+  </main>
+
+  <section class="projects card" aria-labelledby="projects-title">
+    <h2 id="projects-title">Visualisierung und 3 Windparks</h2>
+    <p class="projects-copy">Darstellung aus der ursprünglichen Homepage mit den aktuell bekannten Projekten in der Region.</p>
+    <p class="places-title">Betroffene Ortschaften (Auswahl)</p>
+    <ul class="places-list">
+      <li>Franken</li>
+      <li>Neuhofen</li>
+      <li>Hainsbach</li>
+      <li>Hadersbach</li>
+      <li>Hart</li>
+      <li>Reuth</li>
+      <li>Weichs</li>
+      <li>Geiselhöring</li>
+      <li>Laberweinting</li>
+      <li>Mengkofen</li>
+    </ul>
+
+    <div class="project-grid">
+      <article class="project-item">
+        <img src="assets/windpark-juwi.png" alt="Windpark 1 JUWI - Kartendarstellung" loading="lazy" />
+        <h3 class="park-title park-1">Windpark 1 (JUWI)</h3>
+        <p>Mengkofen, Standort Pramersbuch. Maximalplanung: 4 WEA, Gesamtleistung ca. 30 MW.</p>
+        <ul>
+          <li>Zeitplan laut Darstellung: Start 2024, Inbetriebnahme Ende 2027</li>
+          <li>Projektseite: <a href="https://windpark.juwi.de/mengkofen" target="_blank" rel="noopener noreferrer">JUWI Mengkofen</a></li>
+        </ul>
+      </article>
+
+      <article class="project-item">
+        <img src="assets/windpark-primus.png" alt="Windpark 2 Primus Energy - Kartendarstellung" loading="lazy" />
+        <h3 class="park-title park-2">Windpark 2 (Primus Energy)</h3>
+        <p>Laberweinting I. Maximalplanung: 7 WEA (davon 6 genehmigt), Typ V162.</p>
+        <ul>
+          <li>Gesamthöhe 250 m, Rotordurchmesser 162 m, Leistung 6.2 MW</li>
+          <li>Prognose laut Darstellung: bis 100.000.000 kWh, Kommunalabgabe ca. 200.000 EUR/Jahr</li>
+        </ul>
+      </article>
+
+      <article class="project-item">
+        <img src="assets/windpark-hermann.png" alt="Windpark 3 Hermann - Umzingelungsdarstellung" loading="lazy" />
+        <h3 class="park-title park-3">Windpark 3 (Hermann)</h3>
+        <p>Laberweinting II, Geiselhöring, Mengkofen durch Privatinvestor.</p>
+        <ul>
+          <li>Maximalplanung: 9 WEA, Gesamtleistung 61.2 MW</li>
+          <li>Typ Nordex N175, Gesamthöhe 266 m, Leistung 6.8 MW</li>
+          <li>Kommunalabgabe laut Darstellung: ca. 198.000 EUR/Jahr</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="visual-gallery card" aria-labelledby="visual-gallery-title">
+    <h2 id="visual-gallery-title">Visualisierung - Originalbilder ab diesem Abschnitt</h2>
+    <p class="projects-copy">Bildmaterial aus der ursprünglichen Seite ab dem Punkt „Visualisierung“.</p>
+
+    <div class="visual-grid">
+      <article class="visual-item">
+        <h3>Hadersbach</h3>
+        <div class="visual-pair">
+          <img src="assets/visual-hadersbach-boden.jpeg" alt="Hadersbach Bodenperspektive" loading="lazy" />
+          <img src="assets/visual-hadersbach-richtung.png" alt="Hadersbach Bodenperspektive Richtung" loading="lazy" />
+        </div>
+      </article>
+      <article class="visual-item">
+        <h3>Hainsbach</h3>
+        <div class="visual-pair">
+          <img src="assets/visual-hainsbach-boden.png" alt="Hainsbach Bodenperspektive" loading="lazy" />
+          <img src="assets/visual-hainsbach-richtung.png" alt="Hainsbach Bodenperspektive Richtung" loading="lazy" />
+        </div>
+      </article>
+      <article class="visual-item">
+        <h3>Wissing</h3>
+        <div class="visual-pair">
+          <img src="assets/visual-wissing-boden.png" alt="Wissing Visualisierung" loading="lazy" />
+          <img src="assets/visual-wissing-richtung.png" alt="Wissing Visualisierung Richtung" loading="lazy" />
+        </div>
+      </article>
+      <article class="visual-item">
+        <h3>Hart (Vogelperspektive)</h3>
+        <div class="visual-pair">
+          <img src="assets/visual-hart-vogel.png" alt="Hart Vogelperspektive" loading="lazy" />
+          <img src="assets/visual-hart-vogel-richtung.png" alt="Hart Vogelperspektive Richtung" loading="lazy" />
+        </div>
+      </article>
+      <article class="visual-item">
+        <h3>Reuth</h3>
+        <div class="visual-pair">
+          <img src="assets/visual-reuth-boden.png" alt="Reuth Bodenperspektive" loading="lazy" />
+          <img src="assets/visual-reuth-richtung.png" alt="Reuth Bodenperspektive Richtung" loading="lazy" />
+        </div>
+      </article>
+      <article class="visual-item">
+        <h3>Hart (Bodenperspektive)</h3>
+        <div class="visual-pair">
+          <img src="assets/visual-hart-boden.png" alt="Hart Bodenperspektive" loading="lazy" />
+          <img src="assets/visual-hart-boden-richtung.png" alt="Hart Bodenperspektive Richtung" loading="lazy" />
+        </div>
+      </article>
+      <article class="visual-item">
+        <h3>Franken</h3>
+        <div class="visual-pair">
+          <img src="assets/visual-franken-vogel.png" alt="Franken Vogelperspektive" loading="lazy" />
+        </div>
+      </article>
+      <article class="visual-item">
+        <h3>Neuhofen</h3>
+        <div class="visual-pair">
+          <img src="assets/visual-neuhofen-vogel.png" alt="Neuhofen Vogelperspektive" loading="lazy" />
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="action-section card" aria-labelledby="what-you-can-do-title">
+    <h2 id="what-you-can-do-title">Was kannst du tun?</h2>
+    <ul>
+      <li><strong>Viele wissen noch von nichts:</strong> Informiere dein Umfeld und teile die Seite in den Dörfern und Vereinen.</li>
+      <li>Bilde dir eine eigene Meinung. Ziel ist eine faire und sachliche Diskussion ohne Hetze.</li>
+      <li><strong>Unterstütze die Initiative mit deiner Stimme:</strong> Die Anmeldung hilft bei Information und Koordination.</li>
+    </ul>
+  </section>
+
+  <section class="action-section card" aria-labelledby="what-we-do-title">
+    <h2 id="what-we-do-title">Was wir als Bürgerinitiative tun...</h2>
+    <ul>
+      <li>Gespräche mit Bürgermeistern, Gemeinderäten und Stadträten in Laberweinting, Mengkofen und Geiselhöring.</li>
+      <li>Ziel: Eine Überlastung der betroffenen Orte durch weitere Verdichtung im Genehmigungsverfahren belegen.</li>
+      <li>Argumentation gegen eine unzumutbare Umzingelung und für nachvollziehbare regionale Abwägung.</li>
+      <li>Dokumentation und politische Begleitung laufender Verfahren, inklusive Stellungnahmen und Petition.</li>
+      <li>Transparente Information der Bevölkerung zu Planungsschritten, Auswirkungen und Handlungsoptionen.</li>
+    </ul>
+    <p class="action-note">
+      Kommunale Beschlüsse gegen Teile von Windpark 3 laut Originalseite:
+      Laberweinting (03.06.2024), Mengkofen (29.07.2025), Geiselhöring (02.09.2025).
+    </p>
+  </section>
+
+  <section id="anmeldung" class="register card" aria-labelledby="register-title">
+    <h2 id="register-title">Deine Stimme!</h2>
+    <p class="register-copy">Unterstütze unsere Petition und unseren Kompromiss für die Region Straubing-Bogen.</p>
+
+    <form id="registration-form" class="register-form" novalidate>
+      <label for="reg-email">E-Mail-Adresse *</label>
+      <input id="reg-email" name="email" type="email" required autocomplete="email" />
+
+      <label for="reg-firstname">Vorname *</label>
+      <input id="reg-firstname" name="firstname" type="text" required autocomplete="given-name" />
+
+      <label for="reg-lastname">Nachname *</label>
+      <input id="reg-lastname" name="lastname" type="text" required autocomplete="family-name" />
+
+      <label for="reg-phone">Telefonnummer für WhatsApp-Info-Gruppe</label>
+      <input id="reg-phone" name="phone" type="tel" autocomplete="tel" />
+
+      <fieldset class="register-fieldset">
+        <legend>Gemeinde *</legend>
+        <label><input type="radio" name="gemeinde" value="Laberweinting" required /> Laberweinting</label>
+        <label><input type="radio" name="gemeinde" value="Geiselhoering" required /> Geiselhöring</label>
+        <label><input type="radio" name="gemeinde" value="Mallersdorf" required /> Mallersdorf</label>
+        <label><input type="radio" name="gemeinde" value="Mengkofen" required /> Mengkofen</label>
+        <label><input type="radio" name="gemeinde" value="Weitere" required /> Weitere</label>
+      </fieldset>
+
+      <label for="reg-role">Funktion</label>
+      <input id="reg-role" name="funktion" type="text" value="Teilnahme" />
+
+      <button id="registration-submit" class="cta-button" type="submit">Anmeldung senden</button>
+      <p id="registration-status" class="register-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <p>Stand: <span id="last-updated">-</span></p>
+  </footer>
+
+  <script src="news.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

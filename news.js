@@ -1,0 +1,50 @@
+window.NEWS_ENTRIES = [
+  {
+    date: "2026-02-01",
+    title: "Unterlagen & Neuigkeiten veröffentlicht",
+    text: "Aktueller Sammelstand mit Petition, Medienbeitrag und Stellungnahmen wurde im Bereich Dokumente/News aktualisiert.",
+    url: "https://www.buergerinitiative-ejun.de/docs/post/unterlagen-neuigkeiten-vom-01.02.2026",
+  },
+  {
+    date: "2025-12-11",
+    title: "Petition: Antwort der Regierung",
+    text: "Die Antwort zum Petitionsergebnis wurde als Dokument veröffentlicht.",
+    url: "https://www.buergerinitiative-ejun.de/2025_12_11%20Petition-%20Antwort%20Ergebnis%20der%20Regierung.pdf",
+  },
+  {
+    date: "2025-11-29",
+    title: "BR24-Beitrag zur Umzingelung",
+    text: "Ein BR24-Beitrag zur Situation in Franken-Neuhofen wurde auf YouTube verlinkt.",
+    url: "https://www.youtube.com/watch?v=r464eFlL1xM",
+  },
+  {
+    date: "2025-10-06",
+    title: "Stellungnahme an Planungsverband",
+    text: "Die Stellungnahme von EjUn gegen den Planungsverband Donau-Wald wurde bereitgestellt.",
+    url: "https://www.buergerinitiative-ejun.de/2025_10_06%20Stellungnahme%20EjUn%20gegen%20Planungsverband%20Donau-Wald.pdf",
+  },
+  {
+    date: "2025-06-06",
+    title: "Public Petition veröffentlicht",
+    text: "Die Petition zur Windkraft-Umzingelung Franken-Neuhofen wurde als öffentliches Dokument abgelegt.",
+    url: "https://www.buergerinitiative-ejun.de/Dokumente/2025_06_06%20Public%20Petition%20Windkraft%20Umzingelung%20Franken-Neuhofen.pdf",
+  },
+  {
+    date: "2025-05-11",
+    title: "Schreiben an Landrat Laumer",
+    text: "Nach dem regionalen runden Tisch wurde ein Schreiben mit Anhängen eingereicht.",
+    url: "https://www.buergerinitiative-ejun.de/Dokumente/2025_05%20Entlastung%20Franken-Neuhofen%20durch%20optimierte%20Planung%20Windvorrangfl%C3%A4chen.pdf",
+  },
+  {
+    date: "2024-12-16",
+    title: "Rückmeldung Planungsverband Donau-Wald",
+    text: "Rückmeldung des Planungsverbands zur Thematik Umzingelung wurde dokumentiert.",
+    url: "https://www.buergerinitiative-ejun.de/Dokumente/2024_12%20Antwort%20Laumer-%20Regionaler%20Planungsverband.pdf",
+  },
+  {
+    date: "2024-06-23",
+    title: "Frühe Initiative-Treffen",
+    text: "In den ersten Treffen wurden Organisation, Informationsweitergabe und Vernetzung aufgebaut.",
+    url: "https://www.buergerinitiative-ejun.de/docs/post/treffen-vom-23.06.2024",
+  },
+];
