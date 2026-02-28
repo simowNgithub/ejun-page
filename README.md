@@ -1,6 +1,7 @@
-﻿# EJUN Landingpage
+﻿# EjUn Landingpage
 
 Statische, mobile-first Landingpage mit:
+
 - Hauptproblem und Details auf der linken Seite (Desktop)
 - News-Timeline rechts (Desktop), unterhalb auf Smartphones
 - News aus einer einfachen JSON-Datei
@@ -20,6 +21,7 @@ Format je Eintrag:
 ```
 
 Hinweise:
+
 - Datum immer als `YYYY-MM-DD`
 - Neueste Eintraege koennen einfach ergaenzt werden, die Anzeige sortiert automatisch nach Datum
 
@@ -40,12 +42,14 @@ Dann im Browser oeffnen: `http://localhost:8080`
 ## Einfach deployen
 
 ### GitHub Pages
+
 1. Repo auf GitHub pushen.
 2. In GitHub: `Settings -> Pages`.
 3. `Deploy from a branch`, Branch `main`, Folder `/ (root)`.
 4. Speichern, nach kurzer Zeit ist die Seite online.
 
 ### Netlify (Drag & Drop)
+
 1. Auf Netlify anmelden.
 2. Projektordner direkt auf die Seite ziehen.
 3. URL wird automatisch erstellt.
