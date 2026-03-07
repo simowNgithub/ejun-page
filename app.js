@@ -21,7 +21,58 @@ async function getNewsEntries() {
   }
 }
 
-const WEBHOOK_URL = "https://test.de/";
+const WEBHOOK_URL =
+  "https://automation.sapbusiness.one/workflows/AP78lJCfHteS2hxH";
+const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/LfCRRjqzsAY9DAVMw1ixUG";
+
+function launchConfetti() {
+  const colors = ["#15803d", "#b91c1c", "#2563eb", "#f59e0b", "#0ea5e9"];
+  const pieces = 90;
+
+  for (let i = 0; i < pieces; i += 1) {
+    const piece = document.createElement("span");
+    piece.className = "confetti-piece";
+    piece.style.left = `${Math.random() * 100}vw`;
+    piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.setProperty("--dx", `${(Math.random() - 0.5) * 180}px`);
+    piece.style.setProperty("--rot", `${(Math.random() - 0.5) * 720}deg`);
+    piece.style.animationDuration = `${2 + Math.random() * 1.8}s`;
+    document.body.append(piece);
+    piece.addEventListener("animationend", () => piece.remove(), { once: true });
+  }
+}
+
+function openSuccessModal() {
+  const modal = document.getElementById("success-modal");
+  const link = document.getElementById("success-whatsapp-link");
+
+  if (!modal || !link) {
+    window.location.href = WHATSAPP_GROUP_URL;
+    return;
+  }
+
+  link.href = WHATSAPP_GROUP_URL;
+  modal.hidden = false;
+  launchConfetti();
+
+  setTimeout(() => {
+    window.location.href = WHATSAPP_GROUP_URL;
+  }, 2600);
+}
+
+function initSuccessModal() {
+  const modal = document.getElementById("success-modal");
+  if (!modal) {
+    return;
+  }
+
+  const closeTrigger = modal.querySelector("[data-close-success]");
+  if (closeTrigger) {
+    closeTrigger.addEventListener("click", () => {
+      modal.hidden = true;
+    });
+  }
+}
 
 function getSelectedRadioValue(form, name) {
   const selected = form.querySelector(`input[name="${name}"]:checked`);
@@ -46,14 +97,16 @@ function initRegistrationForm() {
     }
 
     const payload = {
+      event: "registration_submitted",
+      submittedAt: new Date().toISOString(),
+      pageUrl: window.location.href,
+      pageTitle: document.title || "",
       email: form.email.value.trim(),
-      firstname: form.firstname.value.trim(),
-      lastname: form.lastname.value.trim(),
+      firstName: form.firstname.value.trim(),
+      lastName: form.lastname.value.trim(),
       phone: form.phone.value.trim(),
       gemeinde: getSelectedRadioValue(form, "gemeinde"),
       funktion: form.funktion.value.trim(),
-      source: window.location.href,
-      submittedAt: new Date().toISOString(),
     };
 
     submit.disabled = true;
@@ -74,6 +127,7 @@ function initRegistrationForm() {
 
       status.textContent = "Anmeldung erfolgreich gesendet.";
       form.reset();
+      openSuccessModal();
     } catch (error) {
       status.textContent = "Fehler beim Senden der Anmeldung.";
       console.error(error);
@@ -143,4 +197,5 @@ async function loadNews() {
 }
 
 loadNews();
+initSuccessModal();
 initRegistrationForm();

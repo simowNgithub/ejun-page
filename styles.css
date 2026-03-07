@@ -161,6 +161,23 @@ h1 {
   padding: 0;
 }
 
+.problem-principles-title {
+  color: #0b3a69;
+  font-size: clamp(2rem, 5.2vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.problem-principles-text {
+  font-size: clamp(1.2rem, 3.9vw, 2rem);
+  line-height: 1.45;
+  color: #26323b;
+  margin: 0 0 1rem;
+}
+
+.problem-red {
+  color: #c0392b;
+}
+
 .problem-visual-link {
   display: block;
   margin: 0 0 0.85rem;
@@ -443,6 +460,56 @@ h1 {
   margin: 0.65rem 0 0;
   color: var(--muted);
   font-weight: 600;
+}
+
+.success-modal[hidden] {
+  display: none;
+}
+
+.success-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+}
+
+.success-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 32, 28, 0.55);
+}
+
+.success-dialog {
+  position: relative;
+  width: min(520px, 92vw);
+  background: #fffaf2;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.success-dialog p {
+  margin: 0 0 0.9rem;
+}
+
+.confetti-piece {
+  position: fixed;
+  top: -12px;
+  width: 8px;
+  height: 14px;
+  opacity: 0.95;
+  pointer-events: none;
+  z-index: 1300;
+  animation: confetti-fall linear forwards;
+}
+
+@keyframes confetti-fall {
+  to {
+    transform: translate3d(var(--dx), 110vh, 0) rotate(var(--rot));
+    opacity: 0.9;
+  }
 }
 
 @media (min-width: 880px) {
