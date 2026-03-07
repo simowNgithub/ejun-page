@@ -6,6 +6,12 @@ window.NEWS_ENTRIES = [
     url: "sources/2026_02%20Petition%20WI.0084.19,%20Antwortschreiben%20Ministerium.pdf",
   },
   {
+    date: "2026-02-10",
+    title: "Windpark 3 (Hayforst): UVP ist durchzuführen",
+    text: "Die allgemeine Vorprüfung ergab, dass erhebliche nachteilige Umweltauswirkungen möglich sind; ausschlaggebend sind unter anderem die Rodungen (9,3 ha dauerhaft, 16,4 ha temporär), Habitatverluste und Unsicherheiten bei Kompensationsmaßnahmen.",
+    url: "http://www.uvp-verbund.de/trefferanzeige?docuuid=1697277f-1ff2-4c6b-817b-d895ab5a6db7&q=&ct=true&rstart=0&currentSelectorPage=1&f=type%3Aflurbereinigung%3Bprocedure%3Aprocedure_10_time%3Bprocedure%3Aprocedure_12_time%3Bprocedure%3Aprocedure_13_time%3Bprocedure%3Aprocedure_14_time%3Bprocedure%3Aprocedure_11_time%3B&category=chemie%3Bholzzellstoff%3Bkernenergie%3Bbaustoffe%3Benergie%3Bbauvorhaben%3Bflurbereinigung&modtime=last_month%3Blast_year&procedure=obj_class_zv&provider=ni%3Bby",
+  },
+  {
     date: "2026-02-01",
     title: "Unterlagen & Neuigkeiten veröffentlicht",
     text: "Aktueller Sammelstand mit Petition, Medienbeitrag und Stellungnahmen wurde im Bereich Dokumente/News aktualisiert.",

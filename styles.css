@@ -43,8 +43,7 @@ body::before {
   opacity: 0.25;
 }
 
-.layout,
-.site-footer {
+.layout {
   width: min(1120px, 92vw);
   margin-inline: auto;
 }
@@ -78,6 +77,10 @@ h3 {
   margin: 0 0 0.8rem;
   line-height: 1.15;
   font-family: "Space Grotesk", sans-serif;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
 }
 
 h1 {
@@ -163,7 +166,7 @@ h1 {
 
 .problem-principles-title {
   color: #0b3a69;
-  font-size: clamp(1.7rem, 4.4vw, 2.4rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
   margin-bottom: 1rem;
 }
 
@@ -262,9 +265,32 @@ h1 {
 }
 
 .site-footer {
+  width: 100%;
+  margin: 0;
   color: var(--muted);
   font-size: 0.9rem;
-  padding: 0.4rem 0 1.5rem;
+  padding: 0.95rem 0 1.3rem;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(90deg, rgba(255, 250, 242, 0.92), rgba(255, 250, 242, 0.7));
+}
+
+.site-footer-inner {
+  width: min(1120px, 92vw);
+  margin-inline: auto;
+}
+
+.footer-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.footer-col p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .register {
@@ -462,6 +488,35 @@ h1 {
   font-weight: 600;
 }
 
+.legal-layout {
+  display: block;
+}
+
+.legal-card h2 {
+  margin-top: 0.2rem;
+}
+
+.legal-card h3 {
+  margin-top: 0.9rem;
+}
+
+.legal-card p {
+  margin: 0 0 0.75rem;
+}
+
+.legal-contacts {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0 0 0.9rem;
+}
+
+.legal-contacts article {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.75rem;
+  background: #fffef8;
+}
+
 .success-modal[hidden] {
   display: none;
 }
@@ -533,6 +588,15 @@ h1 {
 
   .visual-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .legal-contacts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
   }
 
   .timeline {
