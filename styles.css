@@ -406,15 +406,9 @@ h1 {
   margin: 0 auto 1rem;
 }
 
-.register-intro,
 .register-cta {
   width: min(1120px, 92vw);
   margin: 0 auto 1rem;
-}
-
-.register-intro {
-  display: grid;
-  gap: 0.55rem;
 }
 
 .register-cta {
