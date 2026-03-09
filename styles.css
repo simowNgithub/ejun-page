@@ -22,6 +22,13 @@ body {
   position: relative;
 }
 
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -77,6 +84,13 @@ h3 {
   margin: 0 0 0.8rem;
   line-height: 1.15;
   font-family: "Space Grotesk", sans-serif;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+h1,
+h2 {
+  font-weight: 700;
 }
 
 h3 {
@@ -87,6 +101,10 @@ h1 {
   font-size: clamp(1.9rem, 5vw, 3.2rem);
   max-width: none;
   margin: 0;
+}
+
+h2 {
+  font-size: clamp(1.45rem, 3vw, 2.1rem);
 }
 
 .hero-full-inner h1 {
@@ -164,9 +182,9 @@ h1 {
   padding: 0;
 }
 
-.problem-principles-title {
-  color: #0b3a69;
-  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+.section-title {
+  color: var(--ink);
+  font-size: clamp(1.45rem, 3vw, 2.1rem);
   margin-bottom: 1rem;
 }
 
@@ -255,6 +273,28 @@ h1 {
 .news-text {
   margin: 0.2rem 0 0;
   color: var(--ink);
+}
+
+.news-more-item {
+  list-style: none;
+  padding-top: 0.35rem;
+}
+
+.news-more-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.news-more-button:hover,
+.news-more-button:focus-visible {
+  color: var(--brand);
 }
 
 .news-item a {
@@ -540,6 +580,12 @@ h1 {
   border-radius: 10px;
   border: 1px solid var(--line);
   margin-bottom: 0.55rem;
+}
+
+.project-image-uniform {
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: #f7f3eb;
 }
 
 .project-item h3 {

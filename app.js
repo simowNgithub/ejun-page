@@ -202,6 +202,61 @@ function initVisualSlider() {
   updateSlider();
 }
 
+function renderNewsEntries(list, entries, visibleCount, step) {
+  list.innerHTML = "";
+
+  entries.slice(0, visibleCount).forEach((entry) => {
+    const item = document.createElement("li");
+    item.className = "news-item";
+
+    const date = document.createElement("time");
+    date.className = "news-date";
+    date.dateTime = entry.date;
+    date.textContent = new Date(entry.date).toLocaleDateString("de-DE", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+
+    const title = document.createElement("span");
+    title.className = "news-title";
+    title.textContent = entry.title;
+
+    const text = document.createElement("p");
+    text.className = "news-text";
+    text.textContent = entry.text;
+
+    item.append(date, title, text);
+
+    if (entry.url) {
+      const link = document.createElement("a");
+      link.href = entry.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "Quelle";
+      item.append(link);
+    }
+
+    list.append(item);
+  });
+
+  if (visibleCount < entries.length) {
+    const moreItem = document.createElement("li");
+    moreItem.className = "news-more-item";
+
+    const moreButton = document.createElement("button");
+    moreButton.type = "button";
+    moreButton.className = "news-more-button";
+    moreButton.textContent = "mehr...";
+    moreButton.addEventListener("click", () => {
+      renderNewsEntries(list, entries, visibleCount + step, step);
+    });
+
+    moreItem.append(moreButton);
+    list.append(moreItem);
+  }
+}
+
 async function loadNews() {
   const list = document.getElementById("news-list");
   const stamp = document.getElementById("last-updated");
@@ -212,42 +267,8 @@ async function loadNews() {
 
   try {
     const entries = await getNewsEntries();
-    entries
-      .sort((a, b) => new Date(b.date) - new Date(a.date))
-      .forEach((entry) => {
-        const item = document.createElement("li");
-        item.className = "news-item";
-
-        const date = document.createElement("time");
-        date.className = "news-date";
-        date.dateTime = entry.date;
-        date.textContent = new Date(entry.date).toLocaleDateString("de-DE", {
-          year: "numeric",
-          month: "2-digit",
-          day: "2-digit",
-        });
-
-        const title = document.createElement("span");
-        title.className = "news-title";
-        title.textContent = entry.title;
-
-        const text = document.createElement("p");
-        text.className = "news-text";
-        text.textContent = entry.text;
-
-        item.append(date, title, text);
-
-        if (entry.url) {
-          const link = document.createElement("a");
-          link.href = entry.url;
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
-          link.textContent = "Quelle";
-          item.append(link);
-        }
-
-        list.append(item);
-      });
+    const sortedEntries = entries.sort((a, b) => new Date(b.date) - new Date(a.date));
+    renderNewsEntries(list, sortedEntries, 3, 3);
 
     stamp.textContent = new Date().toLocaleDateString("de-DE", {
       year: "numeric",
