@@ -153,128 +153,156 @@
       Kommunale Beschlüsse gegen Teile von Windpark 3 laut Originalseite:
       Laberweinting (03.06.2024), Mengkofen (29.07.2025), Geiselhöring (02.09.2025).
     </p>
+    <a class="cta-button register-cta-button action-cta-button" href="registrierung.html">Unterstütze uns!</a>
   </section>
-
-  <section id="anmeldung" class="register card" aria-labelledby="register-title">
-    <h2 id="register-title">Deine Stimme!</h2>
-    <p class="register-copy">Unterstütze unsere Petition und unseren Kompromiss für die Region Straubing-Bogen.</p>
-
-    <form id="registration-form" class="register-form" novalidate>
-      <label for="reg-email">E-Mail-Adresse *</label>
-      <input id="reg-email" name="email" type="email" required autocomplete="email" />
-
-      <label for="reg-firstname">Vorname *</label>
-      <input id="reg-firstname" name="firstname" type="text" required autocomplete="given-name" />
-
-      <label for="reg-lastname">Nachname *</label>
-      <input id="reg-lastname" name="lastname" type="text" required autocomplete="family-name" />
-
-      <label for="reg-phone">Telefonnummer für WhatsApp-Info-Gruppe</label>
-      <input id="reg-phone" name="phone" type="tel" autocomplete="tel" />
-
-      <fieldset class="register-fieldset">
-        <legend>Gemeinde *</legend>
-        <label><input type="radio" name="gemeinde" value="Laberweinting" required /> Laberweinting</label>
-        <label><input type="radio" name="gemeinde" value="Geiselhoering" required /> Geiselhöring</label>
-        <label><input type="radio" name="gemeinde" value="Mallersdorf" required /> Mallersdorf</label>
-        <label><input type="radio" name="gemeinde" value="Mengkofen" required /> Mengkofen</label>
-        <label><input type="radio" name="gemeinde" value="Weitere" required /> Weitere</label>
-      </fieldset>
-
-      <label for="reg-role">Funktion</label>
-      <input id="reg-role" name="funktion" type="text" value="Teilnahme" />
-
-      <button id="registration-submit" class="cta-button" type="submit">Anmeldung senden</button>
-      <p id="registration-status" class="register-status" role="status" aria-live="polite"></p>
-    </form>
-  </section>
-
-  <div id="success-modal" class="success-modal" hidden>
-    <div class="success-backdrop" data-close-success></div>
-    <div class="success-dialog" role="dialog" aria-modal="true" aria-labelledby="success-title">
-      <h2 id="success-title">Vielen Dank für deine Unterstützung!</h2>
-      <p>Deine Registrierung war erfolgreich. Du wirst jetzt in unsere WhatsApp-Gruppe weitergeleitet.</p>
-      <a id="success-whatsapp-link" class="cta-button" href="https://chat.whatsapp.com/LfCRRjqzsAY9DAVMw1ixUG" target="_blank" rel="noopener noreferrer">
-        Jetzt zur WhatsApp-Gruppe
-      </a>
-    </div>
-  </div>
 
   
   <section class="visual-gallery card" aria-labelledby="visual-gallery-title">
     <h2 id="visual-gallery-title">Visualisierung</h2>
     <p class="projects-copy">Bildmaterial aus der ursprünglichen Seite ab dem Punkt „Visualisierung“.</p>
 
-    <div class="visual-grid">
-      <article class="visual-item">
-        <h3>Hadersbach</h3>
-        <div class="visual-pair">
-          <img src="assets/visual-hadersbach-boden.jpeg" alt="Hadersbach Bodenperspektive" loading="lazy" />
-          <img src="assets/visual-hadersbach-richtung.png" alt="Hadersbach Bodenperspektive Richtung" loading="lazy" />
+    <div class="visual-slider" data-visual-slider tabindex="0">
+      <div class="visual-slider-top">
+        <p class="visual-slider-meta">
+          <span class="visual-slider-count" data-visual-count>1 / 8</span>
+          <span>Mit Pfeilen oder Punkten durchschalten</span>
+        </p>
+        <div class="visual-slider-controls">
+          <button class="visual-nav" type="button" data-visual-prev aria-label="Vorherige Visualisierung">‹</button>
+          <button class="visual-nav" type="button" data-visual-next aria-label="Naechste Visualisierung">›</button>
         </div>
-      </article>
-      <article class="visual-item">
-        <h3>Hainsbach</h3>
-        <div class="visual-pair">
-          <img src="assets/visual-hainsbach-boden.png" alt="Hainsbach Bodenperspektive" loading="lazy" />
-          <img src="assets/visual-hainsbach-richtung.png" alt="Hainsbach Bodenperspektive Richtung" loading="lazy" />
+      </div>
+
+      <div class="visual-viewport">
+        <div class="visual-track" data-visual-track>
+          <article class="visual-slide" data-visual-slide>
+            <div class="visual-slide-copy">
+              <p class="visual-kicker">Visualisierung 1</p>
+              <h3>Hadersbach</h3>
+            </div>
+            <div class="visual-pair">
+              <img src="assets/visual-hadersbach-boden.jpeg" alt="Hadersbach Bodenperspektive" loading="lazy" />
+              <img src="assets/visual-hadersbach-richtung.png" alt="Hadersbach Bodenperspektive Richtung" loading="lazy" />
+            </div>
+          </article>
+
+          <article class="visual-slide" data-visual-slide>
+            <div class="visual-slide-copy">
+              <p class="visual-kicker">Visualisierung 2</p>
+              <h3>Hainsbach</h3>
+            </div>
+            <div class="visual-pair">
+              <img src="assets/visual-hainsbach-boden.png" alt="Hainsbach Bodenperspektive" loading="lazy" />
+              <img src="assets/visual-hainsbach-richtung.png" alt="Hainsbach Bodenperspektive Richtung" loading="lazy" />
+            </div>
+          </article>
+
+          <article class="visual-slide" data-visual-slide>
+            <div class="visual-slide-copy">
+              <p class="visual-kicker">Visualisierung 3</p>
+              <h3>Wissing</h3>
+            </div>
+            <div class="visual-pair">
+              <img src="assets/visual-wissing-boden.png" alt="Wissing Visualisierung" loading="lazy" />
+              <img src="assets/visual-wissing-richtung.png" alt="Wissing Visualisierung Richtung" loading="lazy" />
+            </div>
+          </article>
+
+          <article class="visual-slide" data-visual-slide>
+            <div class="visual-slide-copy">
+              <p class="visual-kicker">Visualisierung 4</p>
+              <h3>Hart (Vogelperspektive)</h3>
+            </div>
+            <div class="visual-pair">
+              <img src="assets/visual-hart-vogel.png" alt="Hart Vogelperspektive" loading="lazy" />
+              <img src="assets/visual-hart-vogel-richtung.png" alt="Hart Vogelperspektive Richtung" loading="lazy" />
+            </div>
+          </article>
+
+          <article class="visual-slide" data-visual-slide>
+            <div class="visual-slide-copy">
+              <p class="visual-kicker">Visualisierung 5</p>
+              <h3>Reuth</h3>
+            </div>
+            <div class="visual-pair">
+              <img src="assets/visual-reuth-boden.png" alt="Reuth Bodenperspektive" loading="lazy" />
+              <img src="assets/visual-reuth-richtung.png" alt="Reuth Bodenperspektive Richtung" loading="lazy" />
+            </div>
+          </article>
+
+          <article class="visual-slide" data-visual-slide>
+            <div class="visual-slide-copy">
+              <p class="visual-kicker">Visualisierung 6</p>
+              <h3>Hart (Bodenperspektive)</h3>
+            </div>
+            <div class="visual-pair">
+              <img src="assets/visual-hart-boden.png" alt="Hart Bodenperspektive" loading="lazy" />
+              <img src="assets/visual-hart-boden-richtung.png" alt="Hart Bodenperspektive Richtung" loading="lazy" />
+            </div>
+          </article>
+
+          <article class="visual-slide" data-visual-slide>
+            <div class="visual-slide-copy">
+              <p class="visual-kicker">Visualisierung 7</p>
+              <h3>Franken</h3>
+            </div>
+            <div class="visual-pair visual-pair-single">
+              <img src="assets/visual-franken-vogel.png" alt="Franken Vogelperspektive" loading="lazy" />
+            </div>
+          </article>
+
+          <article class="visual-slide" data-visual-slide>
+            <div class="visual-slide-copy">
+              <p class="visual-kicker">Visualisierung 8</p>
+              <h3>Neuhofen</h3>
+            </div>
+            <div class="visual-pair visual-pair-single">
+              <img src="assets/visual-neuhofen-vogel.png" alt="Neuhofen Vogelperspektive" loading="lazy" />
+            </div>
+          </article>
         </div>
-      </article>
-      <article class="visual-item">
-        <h3>Wissing</h3>
-        <div class="visual-pair">
-          <img src="assets/visual-wissing-boden.png" alt="Wissing Visualisierung" loading="lazy" />
-          <img src="assets/visual-wissing-richtung.png" alt="Wissing Visualisierung Richtung" loading="lazy" />
-        </div>
-      </article>
-      <article class="visual-item">
-        <h3>Hart (Vogelperspektive)</h3>
-        <div class="visual-pair">
-          <img src="assets/visual-hart-vogel.png" alt="Hart Vogelperspektive" loading="lazy" />
-          <img src="assets/visual-hart-vogel-richtung.png" alt="Hart Vogelperspektive Richtung" loading="lazy" />
-        </div>
-      </article>
-      <article class="visual-item">
-        <h3>Reuth</h3>
-        <div class="visual-pair">
-          <img src="assets/visual-reuth-boden.png" alt="Reuth Bodenperspektive" loading="lazy" />
-          <img src="assets/visual-reuth-richtung.png" alt="Reuth Bodenperspektive Richtung" loading="lazy" />
-        </div>
-      </article>
-      <article class="visual-item">
-        <h3>Hart (Bodenperspektive)</h3>
-        <div class="visual-pair">
-          <img src="assets/visual-hart-boden.png" alt="Hart Bodenperspektive" loading="lazy" />
-          <img src="assets/visual-hart-boden-richtung.png" alt="Hart Bodenperspektive Richtung" loading="lazy" />
-        </div>
-      </article>
-      <article class="visual-item">
-        <h3>Franken</h3>
-        <div class="visual-pair">
-          <img src="assets/visual-franken-vogel.png" alt="Franken Vogelperspektive" loading="lazy" />
-        </div>
-      </article>
-      <article class="visual-item">
-        <h3>Neuhofen</h3>
-        <div class="visual-pair">
-          <img src="assets/visual-neuhofen-vogel.png" alt="Neuhofen Vogelperspektive" loading="lazy" />
-        </div>
-      </article>
+      </div>
+
+      <div class="visual-dots" data-visual-dots aria-label="Visualisierungen"></div>
     </div>
   </section>
 
 
   <footer class="site-footer">
-    <div class="site-footer-inner footer-grid">
-      <div class="footer-col">
-        <p>Kontakt: <a href="mailto:kontakt@buergerinitiative-ejun.de">kontakt@buergerinitiative-ejun.de</a></p>
+    <div class="site-footer-inner">
+      <div class="footer-shell">
+        <div class="footer-brand">
+          <div class="footer-brand-mark">
+            <img src="logo.svg" alt="EjUn Logo" />
+          </div>
+          <div class="footer-brand-copy">
+            <p class="footer-eyebrow">Buendnis vor Ort</p>
+            <p>
+              Regional vernetzt, sachlich informiert und gemeinsam sichtbar fuer faire
+              Entscheidungen in unserer Heimat.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-card">
+          <p class="footer-card-label">Kontakt</p>
+          <a class="footer-email" href="mailto:kontakt@buergerinitiative-ejun.de">kontakt@buergerinitiative-ejun.de</a>
+          <p>Fragen, Hinweise oder Unterstuetzung direkt per E-Mail.</p>
+        </div>
+
+        <div class="footer-card">
+          <p class="footer-card-label">Service</p>
+          <div class="footer-links">
+            <a href="impressum.html">Impressum</a>
+            <a href="registrierung.html">Mitmachen</a>
+          </div>
+          <p>Stand: <span id="last-updated">-</span></p>
+        </div>
       </div>
-      <div class="footer-col">
-        <p><a href="impressum.html">Impressum</a></p>
-      </div>
-      <div class="footer-col">
-        <p>Stand: <span id="last-updated">-</span></p>
-        <p>Copyright © 2026 Bürgerinitiative EjUn</p>
+
+      <div class="footer-bottom">
+        <p>Copyright &copy; 2026 Buergerinitiative EjUn</p>
+        <p>Fuer transparente Information und eine faire Debatte in der Region.</p>
       </div>
     </div>
   </footer>

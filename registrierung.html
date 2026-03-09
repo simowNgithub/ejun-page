@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deine Stimme | Buergerinitiative EjUn</title>
+  <meta name="description" content="Registrierung zur Unterstuetzung der Buergerinitiative EjUn." />
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,800;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="hero hero-full">
+    <div class="hero-full-inner">
+      <img class="hero-logo" src="logo.svg" alt="Logo Buergerinitiative EjUn" />
+      <h1>Deine Stimme!</h1>
+      <a class="cta-button" href="index.html">Zur Startseite</a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card register-intro" aria-labelledby="register-intro-title">
+      <p class="register-cta-eyebrow">Mitmachen</p>
+      <h2 id="register-intro-title">Unterstuetze unsere Petition und unseren Kompromiss fuer die Region.</h2>
+      <p class="register-copy">
+        Mit deiner Anmeldung hilfst du bei Information, Koordination und Sichtbarkeit.
+        Nach dem Absenden wirst du direkt in die WhatsApp-Gruppe weitergeleitet.
+      </p>
+    </section>
+
+    <section class="register card" aria-labelledby="register-title">
+      <h2 id="register-title">Registrierung</h2>
+      <p class="register-copy">Bitte fuelle die Angaben moeglichst vollstaendig aus.</p>
+
+      <form id="registration-form" class="register-form" novalidate>
+        <label for="reg-email">E-Mail-Adresse *</label>
+        <input id="reg-email" name="email" type="email" required autocomplete="email" />
+
+        <label for="reg-firstname">Vorname *</label>
+        <input id="reg-firstname" name="firstname" type="text" required autocomplete="given-name" />
+
+        <label for="reg-lastname">Nachname *</label>
+        <input id="reg-lastname" name="lastname" type="text" required autocomplete="family-name" />
+
+        <label for="reg-phone">Telefonnummer fuer WhatsApp-Info-Gruppe</label>
+        <input id="reg-phone" name="phone" type="tel" autocomplete="tel" />
+
+        <fieldset class="register-fieldset">
+          <legend>Gemeinde *</legend>
+          <label><input type="radio" name="gemeinde" value="Laberweinting" required /> Laberweinting</label>
+          <label><input type="radio" name="gemeinde" value="Geiselhoering" required /> Geiselhoering</label>
+          <label><input type="radio" name="gemeinde" value="Mallersdorf" required /> Mallersdorf</label>
+          <label><input type="radio" name="gemeinde" value="Mengkofen" required /> Mengkofen</label>
+          <label><input type="radio" name="gemeinde" value="Weitere" required /> Weitere</label>
+        </fieldset>
+
+        <label for="reg-role">Funktion</label>
+        <input id="reg-role" name="funktion" type="text" value="Teilnahme" />
+
+        <button id="registration-submit" class="cta-button register-cta-button" type="submit">Jetzt eintragen</button>
+        <p id="registration-status" class="register-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <div id="success-modal" class="success-modal" hidden>
+    <div class="success-backdrop" data-close-success></div>
+    <div class="success-dialog" role="dialog" aria-modal="true" aria-labelledby="success-title">
+      <h2 id="success-title">Vielen Dank fuer deine Unterstuetzung!</h2>
+      <p>Deine Registrierung war erfolgreich. Du wirst jetzt in unsere WhatsApp-Gruppe weitergeleitet.</p>
+      <a id="success-whatsapp-link" class="cta-button" href="https://chat.whatsapp.com/LfCRRjqzsAY9DAVMw1ixUG" target="_blank" rel="noopener noreferrer">
+        Jetzt zur WhatsApp-Gruppe
+      </a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-shell">
+        <div class="footer-brand">
+          <div class="footer-brand-mark">
+            <img src="logo.svg" alt="EjUn Logo" />
+          </div>
+          <div class="footer-brand-copy">
+            <p class="footer-eyebrow">Buendnis vor Ort</p>
+            <p>
+              Regional vernetzt, sachlich informiert und gemeinsam sichtbar fuer faire
+              Entscheidungen in unserer Heimat.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-card">
+          <p class="footer-card-label">Kontakt</p>
+          <a class="footer-email" href="mailto:kontakt@buergerinitiative-ejun.de">kontakt@buergerinitiative-ejun.de</a>
+          <p>Fragen, Hinweise oder Unterstuetzung direkt per E-Mail.</p>
+        </div>
+
+        <div class="footer-card">
+          <p class="footer-card-label">Service</p>
+          <div class="footer-links">
+            <a href="index.html">Startseite</a>
+            <a href="impressum.html">Impressum</a>
+          </div>
+          <p>Stand: 09.03.2026</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Copyright &copy; 2026 Buergerinitiative EjUn</p>
+        <p>Fuer transparente Information und eine faire Debatte in der Region.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

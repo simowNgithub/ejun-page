@@ -137,9 +137,78 @@ function initRegistrationForm() {
   });
 }
 
+function initVisualSlider() {
+  const root = document.querySelector("[data-visual-slider]");
+  if (!root) {
+    return;
+  }
+
+  const track = root.querySelector("[data-visual-track]");
+  const slides = Array.from(root.querySelectorAll("[data-visual-slide]"));
+  const prev = root.querySelector("[data-visual-prev]");
+  const next = root.querySelector("[data-visual-next]");
+  const dots = root.querySelector("[data-visual-dots]");
+  const count = root.querySelector("[data-visual-count]");
+
+  if (!track || slides.length === 0 || !prev || !next || !dots || !count) {
+    return;
+  }
+
+  let index = 0;
+
+  function updateSlider() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    count.textContent = `${index + 1} / ${slides.length}`;
+
+    Array.from(dots.children).forEach((dot, dotIndex) => {
+      dot.setAttribute("aria-current", dotIndex === index ? "true" : "false");
+    });
+
+    prev.disabled = index === 0;
+    next.disabled = index === slides.length - 1;
+  }
+
+  function goTo(nextIndex) {
+    index = Math.max(0, Math.min(nextIndex, slides.length - 1));
+    updateSlider();
+  }
+
+  slides.forEach((slide, slideIndex) => {
+    slide.setAttribute("aria-label", `${slideIndex + 1} von ${slides.length}`);
+
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "visual-dot";
+    dot.setAttribute("aria-label", `Gehe zu Visualisierung ${slideIndex + 1}`);
+    dot.addEventListener("click", () => goTo(slideIndex));
+    dots.append(dot);
+  });
+
+  prev.addEventListener("click", () => goTo(index - 1));
+  next.addEventListener("click", () => goTo(index + 1));
+
+  root.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      goTo(index - 1);
+    }
+
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      goTo(index + 1);
+    }
+  });
+
+  updateSlider();
+}
+
 async function loadNews() {
   const list = document.getElementById("news-list");
   const stamp = document.getElementById("last-updated");
+
+  if (!list || !stamp) {
+    return;
+  }
 
   try {
     const entries = await getNewsEntries();
@@ -197,5 +266,6 @@ async function loadNews() {
 }
 
 loadNews();
+initVisualSlider();
 initSuccessModal();
 initRegistrationForm();
