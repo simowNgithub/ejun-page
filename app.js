@@ -201,6 +201,10 @@ function initVisualSlider() {
       return;
     }
 
+    if (event.target.closest("[data-expandable-image]")) {
+      return;
+    }
+
     pointerId = event.pointerId;
     startX = event.clientX;
     startY = event.clientY;
@@ -353,6 +357,39 @@ function renderNewsEntries(list, entries, visibleCount, step) {
   }
 }
 
+function initImageLightbox() {
+  const lightbox = document.getElementById("image-lightbox");
+  const preview = document.getElementById("image-lightbox-preview");
+
+  if (!lightbox || !preview) {
+    return;
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    preview.src = "";
+    preview.alt = "";
+  }
+
+  document.querySelectorAll("[data-expandable-image]").forEach((image) => {
+    image.addEventListener("click", () => {
+      preview.src = image.currentSrc || image.src;
+      preview.alt = image.alt || "";
+      lightbox.hidden = false;
+    });
+  });
+
+  lightbox.querySelectorAll("[data-close-lightbox]").forEach((element) => {
+    element.addEventListener("click", closeLightbox);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !lightbox.hidden) {
+      closeLightbox();
+    }
+  });
+}
+
 async function loadNews() {
   const list = document.getElementById("news-list");
   const stamp = document.getElementById("last-updated");
@@ -384,5 +421,6 @@ async function loadNews() {
 
 loadNews();
 initVisualSlider();
+initImageLightbox();
 initSuccessModal();
 initRegistrationForm();
