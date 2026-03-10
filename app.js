@@ -143,6 +143,7 @@ function initVisualSlider() {
     return;
   }
 
+  const viewport = root.querySelector(".visual-viewport");
   const track = root.querySelector("[data-visual-track]");
   const slides = Array.from(root.querySelectorAll("[data-visual-slide]"));
   const prev = root.querySelector("[data-visual-prev]");
@@ -150,14 +151,26 @@ function initVisualSlider() {
   const dots = root.querySelector("[data-visual-dots]");
   const count = root.querySelector("[data-visual-count]");
 
-  if (!track || slides.length === 0 || !prev || !next || !dots || !count) {
+  if (!viewport || !track || slides.length === 0 || !prev || !next || !dots || !count) {
     return;
   }
 
   let index = 0;
+  let pointerId = null;
+  let startX = 0;
+  let startY = 0;
+  let deltaX = 0;
+  let deltaY = 0;
+  let isDragging = false;
+  let dragLocked = false;
+
+  function setTrackPosition(offsetPercent = 0) {
+    track.style.transform = `translateX(calc(-${index * 100}% + ${offsetPercent}%))`;
+  }
 
   function updateSlider() {
-    track.style.transform = `translateX(-${index * 100}%)`;
+    track.classList.remove("is-dragging");
+    setTrackPosition();
     count.textContent = `${index + 1} / ${slides.length}`;
 
     Array.from(dots.children).forEach((dot, dotIndex) => {
@@ -173,6 +186,84 @@ function initVisualSlider() {
     updateSlider();
   }
 
+  function resetDragPosition() {
+    deltaX = 0;
+    deltaY = 0;
+    dragLocked = false;
+    isDragging = false;
+    pointerId = null;
+    track.classList.remove("is-dragging");
+    setTrackPosition();
+  }
+
+  function onPointerDown(event) {
+    if (event.pointerType === "mouse" && event.button !== 0) {
+      return;
+    }
+
+    pointerId = event.pointerId;
+    startX = event.clientX;
+    startY = event.clientY;
+    deltaX = 0;
+    deltaY = 0;
+    dragLocked = false;
+    isDragging = true;
+    track.classList.add("is-dragging");
+    viewport.setPointerCapture(pointerId);
+  }
+
+  function onPointerMove(event) {
+    if (!isDragging || event.pointerId !== pointerId) {
+      return;
+    }
+
+    deltaX = event.clientX - startX;
+    deltaY = event.clientY - startY;
+    const viewportWidth = viewport.clientWidth || 1;
+    const offsetPercent = (deltaX / viewportWidth) * 100;
+
+    if (!dragLocked && Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > 8) {
+      if (viewport.hasPointerCapture(pointerId)) {
+        viewport.releasePointerCapture(pointerId);
+      }
+      resetDragPosition();
+      return;
+    }
+
+    if (!dragLocked && Math.abs(deltaX) > 8 && Math.abs(deltaX) > Math.abs(deltaY)) {
+      dragLocked = true;
+    }
+
+    if (dragLocked) {
+      setTrackPosition(offsetPercent);
+    }
+  }
+
+  function onPointerUp(event) {
+    if (!isDragging || event.pointerId !== pointerId) {
+      return;
+    }
+
+    const threshold = Math.min(110, viewport.clientWidth * 0.18);
+    const movedEnough = Math.abs(deltaX) > threshold;
+    const direction = deltaX < 0 ? 1 : -1;
+
+    if (viewport.hasPointerCapture(pointerId)) {
+      viewport.releasePointerCapture(pointerId);
+    }
+
+    if (movedEnough) {
+      goTo(index + direction);
+      deltaX = 0;
+      dragLocked = false;
+      isDragging = false;
+      pointerId = null;
+      return;
+    }
+
+    resetDragPosition();
+  }
+
   slides.forEach((slide, slideIndex) => {
     slide.setAttribute("aria-label", `${slideIndex + 1} von ${slides.length}`);
 
@@ -186,6 +277,11 @@ function initVisualSlider() {
 
   prev.addEventListener("click", () => goTo(index - 1));
   next.addEventListener("click", () => goTo(index + 1));
+  viewport.addEventListener("pointerdown", onPointerDown);
+  viewport.addEventListener("pointermove", onPointerMove);
+  viewport.addEventListener("pointerup", onPointerUp);
+  viewport.addEventListener("pointercancel", resetDragPosition);
+  viewport.addEventListener("lostpointercapture", resetDragPosition);
 
   root.addEventListener("keydown", (event) => {
     if (event.key === "ArrowLeft") {

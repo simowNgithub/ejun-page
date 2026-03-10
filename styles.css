@@ -698,12 +698,18 @@ h2 {
 
 .visual-viewport {
   overflow: hidden;
+  touch-action: pan-y;
+  cursor: grab;
 }
 
 .visual-track {
   display: flex;
   transition: transform 320ms ease;
   will-change: transform;
+}
+
+.visual-track.is-dragging {
+  transition: none;
 }
 
 .visual-slide {
@@ -955,6 +961,10 @@ h2 {
     font-size: 0.88rem;
   }
 
+  .visual-viewport {
+    cursor: default;
+  }
+
   h1 {
     font-size: clamp(1.35rem, 7vw, 2rem);
   }
@@ -978,5 +988,63 @@ h2 {
 
   .hero-support-text {
     display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .visual-slider {
+    gap: 0.7rem;
+  }
+
+  .visual-slider-top {
+    align-items: start;
+  }
+
+  .visual-slider-meta {
+    gap: 0.4rem;
+    font-size: 0.84rem;
+  }
+
+  .visual-slider-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .visual-nav {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .visual-slide {
+    gap: 0.65rem;
+    padding: 0.7rem;
+  }
+
+  .visual-slide-copy {
+    gap: 0.12rem;
+  }
+
+  .visual-pair {
+    gap: 0.5rem;
+  }
+
+  .visual-pair img {
+    border-radius: 10px;
+  }
+
+  .visual-pair:not(.visual-pair-single) img:first-child {
+    min-height: 13rem;
+  }
+
+  .visual-pair:not(.visual-pair-single) img:last-child {
+    min-height: 9.5rem;
+  }
+
+  .visual-pair-single img {
+    min-height: 12rem;
+  }
+
+  .visual-dots {
+    justify-content: center;
   }
 }
