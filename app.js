@@ -390,6 +390,73 @@ function initImageLightbox() {
   });
 }
 
+
+function copyTextWithFallback(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text);
+  }
+
+  const fallbackInput = document.createElement("textarea");
+  fallbackInput.value = text;
+  fallbackInput.setAttribute("readonly", "");
+  fallbackInput.style.position = "fixed";
+  fallbackInput.style.opacity = "0";
+  fallbackInput.style.pointerEvents = "none";
+  document.body.append(fallbackInput);
+  fallbackInput.focus();
+  fallbackInput.select();
+
+  const successful = document.execCommand("copy");
+  fallbackInput.remove();
+
+  if (!successful) {
+    throw new Error("Copy fallback failed");
+  }
+}
+
+function initDonationCopy() {
+  const copyButtons = Array.from(document.querySelectorAll("[data-copy-iban]"));
+  if (copyButtons.length === 0) {
+    return;
+  }
+
+  copyButtons.forEach((copyButton) => {
+    const status = copyButton.parentElement?.querySelector("[data-copy-status]") || document.querySelector("[data-copy-status]");
+    const targetId = copyButton.getAttribute("data-iban-target");
+    const ibanElement = targetId ? document.getElementById(targetId) : null;
+
+    if (!ibanElement) {
+      return;
+    }
+
+    copyButton.addEventListener("click", async () => {
+      const ibanRaw = ibanElement.textContent || "";
+      const iban = ibanRaw.replace(/\s+/g, "").trim();
+
+      if (!iban) {
+        if (status) {
+          status.textContent = "IBAN nicht gefunden.";
+        }
+        return;
+      }
+
+      try {
+        await copyTextWithFallback(iban);
+        if (status) {
+          status.textContent = "IBAN kopiert ✅";
+          window.setTimeout(() => {
+            status.textContent = "";
+          }, 2500);
+        }
+      } catch (_error) {
+        if (status) {
+          status.textContent = "Kopieren nicht möglich. Bitte manuell kopieren.";
+        }
+      }
+    });
+  });
+}
+
 async function loadNews() {
   const list = document.getElementById("news-list");
   const stamp = document.getElementById("last-updated");
@@ -424,3 +491,4 @@ initVisualSlider();
 initImageLightbox();
 initSuccessModal();
 initRegistrationForm();
+initDonationCopy();

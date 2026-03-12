@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spenden | Bürgerinitiative EjUn</title>
+  <meta name="description" content="Unterstütze die Bürgerinitiative EjUn mit einer Spende per Überweisung oder PayPal." />
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,800;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="hero hero-full">
+    <div class="hero-full-inner">
+      <img class="hero-logo" src="logo.svg" alt="Logo Bürgerinitiative EjUn" />
+      <h1>Spenden</h1>
+      <a class="cta-button" href="index.html">Zur Startseite</a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="donation card" aria-labelledby="donation-title">
+      <h2 id="donation-title">Gemeinsam Wirkung erzielen</h2>
+      <p class="donation-intro">
+        Mit deiner Spende unterstützt du unsere Informationsarbeit, Veranstaltungen und Materialien vor Ort.
+        Danke für jede Hilfe – ob klein oder groß.
+      </p>
+      <p class="donation-hint">
+        Hinweis: Kontodaten, QR-Code und PayPal-Link bitte vor Veröffentlichung durch eure finalen Daten ersetzen.
+      </p>
+
+      <div class="donation-grid">
+        <article class="donation-method" aria-labelledby="bank-title">
+          <h3 id="bank-title">Per Banküberweisung</h3>
+          <p>Am einfachsten mobil: IBAN kopieren oder den QR-Code mit deiner Banking-App scannen.</p>
+
+          <dl class="donation-details">
+            <div>
+              <dt>Empfänger</dt>
+              <dd>Bürgerinitiative EjUn</dd>
+            </div>
+            <div>
+              <dt>IBAN</dt>
+              <dd id="donation-iban" class="donation-iban">DE12 3456 7890 1234 5678 90</dd>
+            </div>
+            <div>
+              <dt>Verwendungszweck</dt>
+              <dd>Spende Bürgerinitiative EjUn</dd>
+            </div>
+          </dl>
+
+          <div class="donation-actions">
+            <button type="button" class="cta-button" data-copy-iban data-iban-target="donation-iban">IBAN kopieren</button>
+            <span class="donation-copy-status" data-copy-status role="status" aria-live="polite"></span>
+          </div>
+
+          <figure class="donation-qr">
+            <img
+              src="assets/spenden-qr-platzhalter.svg"
+              alt="QR-Code mit den Überweisungsdaten für die Bürgerinitiative EjUn"
+              loading="lazy"
+            />
+            <figcaption>EPC-/SEPA-QR-Code: Bitte durch euren finalen Banking-QR-Code ersetzen.</figcaption>
+          </figure>
+        </article>
+
+        <article class="donation-method" aria-labelledby="paypal-title">
+          <h3 id="paypal-title">Mit PayPal spenden</h3>
+          <p>Direkt und schnell mit wenigen Klicks:</p>
+          <a
+            class="cta-button donation-paypal-button"
+            href="https://www.paypal.com/donate/?hosted_button_id=BITTE_EURE_PAYPAL_ID_EINTRAGEN"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Zu PayPal
+          </a>
+          <p class="donation-paypal-note">
+            Optional: Ersetze den Link durch euren offiziellen PayPal-Donate-Link oder einen eingebetteten PayPal-Button.
+          </p>
+          <p class="donation-paypal-note">
+            Alternative: paypal.me-Link nutzen, falls kein Hosted-Button vorhanden ist.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-shell">
+        <div class="footer-brand">
+          <div class="footer-brand-mark">
+            <img src="logo.svg" alt="EjUn Logo" />
+          </div>
+          <div class="footer-brand-copy">
+            <p class="footer-eyebrow">Bündnis vor Ort</p>
+            <p>
+              Regional vernetzt, sachlich informiert und gemeinsam sichtbar für faire
+              Entscheidungen in unserer Heimat.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-card">
+          <p class="footer-card-label">Kontakt</p>
+          <a class="footer-email" href="mailto:kontakt@buergerinitiative-ejun.de">kontakt@buergerinitiative-ejun.de</a>
+          <p>Fragen, Hinweise oder Unterstützung direkt per E-Mail.</p>
+        </div>
+
+        <div class="footer-card">
+          <p class="footer-card-label">Service</p>
+          <div class="footer-links">
+            <a href="index.html">Startseite</a>
+            <a href="registrierung.html">Mitmachen</a>
+            <a href="impressum.html">Impressum</a>
+          </div>
+          <p>Stand: 11.03.2026</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Copyright &copy; 2026 Bürgerinitiative EjUn</p>
+        <p>Für transparente Information und eine faire Debatte in der Region.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

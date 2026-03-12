@@ -1210,3 +1210,114 @@ h2 {
     border-radius: 10px;
   }
 }
+
+.donation {
+  width: min(1120px, 92vw);
+  margin: 0 auto 1rem;
+}
+
+.donation-intro {
+  margin: 0;
+  color: var(--muted);
+}
+
+.donation-hint {
+  margin: 0.6rem 0 1rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  color: #6b4f2d;
+  background: #fff8eb;
+  font-size: 0.93rem;
+}
+
+.donation-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.donation-method {
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.85rem;
+  background: #fffef8;
+}
+
+.donation-details {
+  margin: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.donation-details div {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.donation-details dt {
+  font-size: 0.84rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.donation-details dd {
+  margin: 0;
+}
+
+.donation-iban {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1rem, 2.3vw, 1.2rem);
+  letter-spacing: 0.03em;
+  word-break: break-word;
+}
+
+.donation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.donation-copy-status {
+  min-height: 1.2rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.donation-qr {
+  margin: 0.25rem 0 0;
+  display: grid;
+  gap: 0.35rem;
+  justify-items: start;
+}
+
+.donation-qr img {
+  width: min(100%, 210px);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  padding: 0.25rem;
+}
+
+.donation-qr figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.donation-paypal-button {
+  width: fit-content;
+}
+
+.donation-paypal-note {
+  margin: 0;
+  color: var(--muted);
+}
+
+@media (min-width: 860px) {
+  .donation-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
