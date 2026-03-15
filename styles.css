@@ -1400,12 +1400,14 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-start;
   gap: 0.6rem;
   margin-top: auto;
 }
 
 .donation-method-actions .cta-button {
   min-width: 12.25rem;
+  justify-content: center;
 }
 
 .donation-details {
@@ -1561,31 +1563,15 @@ h2 {
 }
 
 .donation-paypal-button {
-  width: fit-content;
-  min-width: 11rem;
+  width: 100%;
+  min-width: 0;
+  max-width: 18rem;
   text-align: center;
   background: linear-gradient(135deg, #14532d, #1c7c43);
 }
 
-.donation-paypal-panel {
-  display: grid;
-  gap: 0.7rem;
-  padding: 0.9rem;
-  border-radius: 16px;
-  border: 1px solid rgba(20, 83, 45, 0.14);
-  background: #f8fbf7;
-  min-height: 100%;
-}
-
 .donation-paypal-form {
   margin: 0;
-}
-
-.donation-paypal-note {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.4;
 }
 
 @media (min-width: 860px) {
@@ -1624,5 +1610,6 @@ h2 {
 
   .donation-method-actions .cta-button {
     width: 100%;
+    max-width: none;
   }
 }
