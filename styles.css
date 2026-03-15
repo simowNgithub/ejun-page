@@ -1266,14 +1266,20 @@ h2 {
 }
 
 .donation {
+  grid-column: 1 / -1;
   width: min(1120px, 92vw);
   margin: 0 auto 1rem;
+}
+
+.donation-shell {
+  display: grid;
+  gap: 1rem;
+  align-items: start;
 }
 
 .donation-header {
   display: grid;
   gap: 1rem;
-  margin-bottom: 1rem;
 }
 
 .donation-kicker {
@@ -1288,23 +1294,28 @@ h2 {
 .donation-intro {
   margin: 0;
   color: var(--muted);
-  max-width: 62ch;
+  max-width: 34ch;
+  font-size: 1.02rem;
+  line-height: 1.6;
 }
 
-.donation-purpose {
+.donation-intro-block {
   display: grid;
-  gap: 0.6rem;
-  padding: 0.9rem 1rem;
-  border: 1px solid rgba(20, 83, 45, 0.14);
-  border-radius: 16px;
-  background: linear-gradient(145deg, rgba(20, 83, 45, 0.08), rgba(255, 255, 255, 0.55));
+  gap: 0.75rem;
+  width: 100%;
+  align-content: start;
+  padding: 1.2rem 1.25rem;
+  border: 1px solid rgba(20, 83, 45, 0.12);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top right, rgba(20, 83, 45, 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 254, 248, 0.96));
 }
 
-.donation-purpose-label {
+.donation-purpose-intro {
   margin: 0;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
+  color: var(--ink);
+  font-weight: 600;
 }
 
 .donation-purpose-list {
@@ -1325,9 +1336,15 @@ h2 {
   font-weight: 600;
 }
 
+.donation-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .donation-grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.1rem;
   align-items: stretch;
 }
 
@@ -1342,7 +1359,7 @@ h2 {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 254, 248, 0.98)),
     #fffef8;
-  box-shadow: 0 10px 30px rgba(31, 42, 46, 0.06);
+  box-shadow: 0 12px 28px rgba(31, 42, 46, 0.06);
   height: 100%;
   font-size: 0.98rem;
 }
@@ -1389,6 +1406,13 @@ h2 {
 .donation-method-head h3 {
   margin: 0;
   font-size: clamp(1.15rem, 2vw, 1.35rem);
+}
+
+.donation-method-head::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(20, 83, 45, 0.2), rgba(20, 83, 45, 0));
 }
 
 .donation-method-body {
@@ -1575,13 +1599,9 @@ h2 {
 }
 
 @media (min-width: 860px) {
-  .donation-header {
-    grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.95fr);
-    align-items: start;
-  }
-
-  .donation-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .donation-shell {
+    grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.5fr);
+    gap: 1.2rem;
   }
 
   .donation-bank-layout {
@@ -1602,6 +1622,10 @@ h2 {
   .donation-method-head {
     align-items: start;
     flex-direction: column;
+  }
+
+  .donation-method-head::after {
+    display: none;
   }
 
   .donation-bank-layout {

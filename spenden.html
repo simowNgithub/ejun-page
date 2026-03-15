@@ -27,27 +27,57 @@
 
   <main class="layout">
     <section class="donation card" aria-labelledby="donation-title">
-      <div class="donation-header">
-        <div>
-          <p class="donation-kicker">Unterstuetzung fuer die Initiative</p>
-          <h2 id="donation-title">Gemeinsam Wirkung erzielen</h2>
-          <p class="donation-intro">
-            Schenkungen finanzieren unsere Klage gegen die Windparks sowie Natur-, Schall- und Umzingelungsgutachten.
-          </p>
-        </div>
-        <div class="donation-purpose">
-          <p class="donation-purpose-label">Verwendung</p>
-          <div class="donation-purpose-list">
-            <span>Klage</span>
-            <span>Naturgutachten</span>
-            <span>Schallgutachten</span>
-            <span>Umzingelungsgutachten</span>
+      <div class="donation-shell">
+        <div class="donation-header">
+          <div class="donation-intro-block">
+            <p class="donation-kicker">Unterstützung für die Initiative</p>
+            <h2 id="donation-title">Gemeinsam Wirkung erzielen</h2>
+            <p class="donation-intro">
+              Schenkungen finanzieren unsere Klage gegen die Windparks und schaffen die Grundlage für Natur-, Schall-
+              und Umzingelungsgutachten.
+            </p>
+            <p class="donation-purpose-intro">
+              Jeder Beitrag fliesst direkt in diese Arbeitsschwerpunkte:
+            </p>
+            <div class="donation-purpose-list">
+              <span>Klage</span>
+              <span>Naturgutachten</span>
+              <span>Schallgutachten</span>
+              <span>Umzingelungsgutachten</span>
+            </div>
+            <p class="donation-note">
+              Du kannst direkt online schenken oder die Überweisungsdaten inklusive Verwendungszweck bequem kopieren.
+            </p>
           </div>
         </div>
-      </div>
 
-      <div class="donation-grid">
-        <article class="donation-method" aria-labelledby="bank-title">
+        <div class="donation-grid">
+          <article class="donation-method" aria-labelledby="paypal-title">
+          <div class="donation-method-head">
+            <div class="donation-method-title">
+              <span class="donation-method-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.2 4h8.22c2.95 0 5 2.2 4.46 5.07-.57 3-3.05 4.8-6.08 4.8h-2.6c-.43 0-.8.31-.88.74L9.6 19H5.95l1.7-10.38A1.03 1.03 0 0 1 8.67 7.8h4.4c1.72 0 2.61.88 2.35 2.28-.25 1.36-1.34 2.15-3.02 2.15h-.87l-.3 1.76h1.3c3.54 0 6.33-1.57 7-5.46C20.18 4.88 18.1 2 14.3 2H8.06L7.2 4Z"></path>
+                </svg>
+              </span>
+              <h3 id="paypal-title">PayPal</h3>
+            </div>
+          </div>
+          <p>Direkt online schenken. PayPal öffnet in einem neuen Tab.</p>
+
+          <div class="donation-method-body">
+            <form id="paypal-donate-form" class="donation-paypal-form" action="https://www.paypal.com/donate" method="post" target="_blank">
+              <input type="hidden" name="business" value="kontakt@buergerinitiative-ejun.de" />
+              <input type="hidden" name="currency_code" value="EUR" />
+            </form>
+          </div>
+
+          <div class="donation-method-actions">
+            <button class="cta-button donation-paypal-button" type="submit" form="paypal-donate-form">Mit PayPal schenken</button>
+          </div>
+          </article>
+
+          <article class="donation-method" aria-labelledby="bank-title">
           <div class="donation-method-head">
             <div class="donation-method-title">
               <span class="donation-method-icon" aria-hidden="true">
@@ -55,7 +85,7 @@
                   <path d="M3 7.5 12 3l9 4.5v2H3v-2Zm1 4h2v6H4v-6Zm5 0h2v6H9v-6Zm5 0h2v6h-2v-6Zm5 0h2v6h-2v-6ZM3 19h18v2H3v-2Z"></path>
                 </svg>
               </span>
-              <h3 id="bank-title">Bankueberweisung</h3>
+              <h3 id="bank-title">Banküberweisung</h3>
             </div>
           </div>
           <p>IBAN kopieren oder QR-Code scannen.</p>
@@ -70,9 +100,9 @@
                 data-iban="DE58500240240504190201"
                 data-bic="DEFFDEFFXXX"
                 data-reference="Schenkung EjUn"
-                aria-label="Girocode fuer Banking-App"
+                aria-label="Girocode für Banking-App"
               ></div>
-              <figcaption>Girocode fuer Banking-App.</figcaption>
+              <figcaption>Girocode für Banking-App.</figcaption>
             </figure>
 
             <div class="donation-bank-copy">
@@ -86,8 +116,8 @@
                       class="donation-copy-icon"
                       data-copy-text
                       data-copy-target="donation-recipient"
-                      aria-label="Empfaenger kopieren"
-                      title="Empfaenger kopieren"
+                      aria-label="Empfänger kopieren"
+                      title="Empfänger kopieren"
                     >
                       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M9 9h10v12H9z"></path>
@@ -161,32 +191,8 @@
             <button type="button" class="cta-button" data-download-girocode data-girocode-target="donation-girocode">Girocode laden</button>
             <span class="donation-copy-status" data-copy-status role="status" aria-live="polite"></span>
           </div>
-        </article>
-
-        <article class="donation-method" aria-labelledby="paypal-title">
-          <div class="donation-method-head">
-            <div class="donation-method-title">
-              <span class="donation-method-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7.2 4h8.22c2.95 0 5 2.2 4.46 5.07-.57 3-3.05 4.8-6.08 4.8h-2.6c-.43 0-.8.31-.88.74L9.6 19H5.95l1.7-10.38A1.03 1.03 0 0 1 8.67 7.8h4.4c1.72 0 2.61.88 2.35 2.28-.25 1.36-1.34 2.15-3.02 2.15h-.87l-.3 1.76h1.3c3.54 0 6.33-1.57 7-5.46C20.18 4.88 18.1 2 14.3 2H8.06L7.2 4Z"></path>
-                </svg>
-              </span>
-              <h3 id="paypal-title">PayPal</h3>
-            </div>
-          </div>
-          <p>Direkt online schenken. PayPal oeffnet in einem neuen Tab.</p>
-
-          <div class="donation-method-body">
-            <form id="paypal-donate-form" class="donation-paypal-form" action="https://www.paypal.com/donate" method="post" target="_blank">
-              <input type="hidden" name="business" value="kontakt@buergerinitiative-ejun.de" />
-              <input type="hidden" name="currency_code" value="EUR" />
-            </form>
-          </div>
-
-          <div class="donation-method-actions">
-            <button class="cta-button donation-paypal-button" type="submit" form="paypal-donate-form">Mit PayPal schenken</button>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
     </section>
   </main>
