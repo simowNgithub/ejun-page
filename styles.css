@@ -68,7 +68,7 @@ body::before {
   margin-inline: auto;
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 0.8rem;
 }
 
 .hero-logo {
@@ -111,23 +111,45 @@ h2 {
   flex: 1 1 auto;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.36rem;
+  margin-left: auto;
+  align-items: center;
+  align-self: center;
+}
+
 .hero-support-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
-  margin-left: auto;
-  min-width: 2.5rem;
+  gap: 0.34rem;
+  min-width: 0;
+  min-height: 2.2rem;
+  line-height: 1;
   flex: 0 0 auto;
+  padding: 0.42rem 0.72rem;
+}
+
+.hero-support-text {
+  display: inline-flex;
+  align-items: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .hero-support-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.15rem;
-  height: 1.15rem;
+  width: 0.95rem;
+  height: 0.95rem;
   line-height: 1;
+  flex: 0 0 auto;
 }
 
 .hero-support-icon svg {
@@ -146,7 +168,9 @@ h2 {
 }
 
 .cta-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.62rem 1rem;
   border: 1px solid transparent;
   border-radius: 999px;
@@ -174,7 +198,16 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 18px;
   box-shadow: var(--shadow);
-  padding: 1.1rem;
+  padding: 1.15rem;
+}
+
+.section-kicker {
+  margin: 0 0 0.45rem;
+  color: var(--brand);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .problem ul {
@@ -321,24 +354,13 @@ h2 {
 
 .footer-shell {
   display: grid;
-  gap: 0.8rem;
-  padding: 0.75rem;
-  border: 1px solid rgba(210, 199, 184, 0.95);
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.42);
-  box-shadow: 0 14px 32px rgba(31, 42, 46, 0.08);
+  gap: 1rem;
+  padding: 0.2rem 0 0.8rem;
 }
 
-.footer-brand,
-.footer-card {
-  position: relative;
-  overflow: hidden;
+.footer-column,
+.footer-brand {
   min-height: 100%;
-  padding: 0.95rem 1rem;
-  border-radius: 16px;
-  border: 1px solid rgba(210, 199, 184, 0.8);
-  background: rgba(255, 250, 242, 0.72);
-  backdrop-filter: blur(10px);
 }
 
 .footer-brand {
@@ -370,8 +392,7 @@ h2 {
   color: var(--muted);
 }
 
-.footer-eyebrow,
-.footer-card-label {
+.footer-eyebrow {
   margin: 0 0 0.2rem;
   font-size: 0.7rem;
   letter-spacing: 0.12em;
@@ -379,12 +400,12 @@ h2 {
   color: var(--brand);
 }
 
-.footer-card p {
+.footer-copy {
   margin: 0;
   color: var(--muted);
 }
 
-.footer-card {
+.footer-column {
   display: grid;
   gap: 0.45rem;
   align-content: start;
@@ -409,12 +430,11 @@ h2 {
 .footer-links a {
   display: inline-flex;
   align-items: center;
-  min-height: 2.15rem;
-  padding: 0.42rem 0.8rem;
-  border-radius: 999px;
-  border: 1px solid rgba(210, 199, 184, 0.95);
-  background: rgba(255, 255, 255, 0.58);
-  color: var(--ink);
+  min-height: 1.6rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -539,6 +559,7 @@ h2 {
 .projects-copy {
   margin: 0 0 0.8rem;
   color: var(--muted);
+  max-width: 60ch;
 }
 
 .places-title {
@@ -894,10 +915,29 @@ h2 {
   margin: 0.65rem 0 0;
   color: var(--muted);
   font-weight: 600;
+  max-width: 62ch;
 }
 
 .action-cta-button {
   margin-top: 1rem;
+}
+
+.action-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.action-cta-group .action-cta-button {
+  margin-top: 0;
+}
+
+.action-cta-group .cta-button {
+  min-height: 3rem;
+  padding: 0.72rem 1.05rem;
+  font-size: 0.98rem;
 }
 
 .legal-layout {
@@ -1038,14 +1078,12 @@ h2 {
     gap: 0.6rem;
   }
 
-  .footer-shell {
-    padding: 0.65rem;
+  .hero-actions {
+    gap: 0.34rem;
   }
 
-  .footer-brand,
-  .footer-card {
-    padding: 0.85rem 0.9rem;
-    border-radius: 14px;
+  .footer-shell {
+    padding: 0.2rem 0 0.8rem;
   }
 
   .footer-brand {
@@ -1083,28 +1121,45 @@ h2 {
   }
 
   .hero-support-btn {
-    display: grid;
-    place-items: center;
-    width: 2.7rem;
-    height: 2.7rem;
-    padding: 0;
-    line-height: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    min-height: 2.05rem;
+    padding: 0.42rem 0.62rem;
+    line-height: 1;
     border-radius: 999px;
-    min-width: 2.7rem;
+    min-width: 0;
   }
 
   .hero-support-icon {
-    width: 1.2rem;
-    height: 1.2rem;
-    transform: translateY(-0.5px);
-  }
-
-  .hero-support-text {
-    display: none;
+    width: 0.9rem;
+    height: 0.9rem;
+    transform: none;
   }
 }
 
 @media (max-width: 640px) {
+  .hero-full-inner {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .hero-actions {
+    width: 100%;
+    margin-left: 0;
+    display: flex;
+  }
+
+  .hero-support-btn {
+    min-width: 0;
+  }
+
+  .action-cta-group {
+    flex-direction: column;
+  }
+
   .project-item {
     padding: 0.7rem;
   }
@@ -1126,7 +1181,6 @@ h2 {
   .footer-brand {
     grid-template-columns: 42px minmax(0, 1fr);
     gap: 0.6rem;
-    padding: 0.75rem 0.8rem;
   }
 
   .footer-brand-mark {
@@ -1208,5 +1262,378 @@ h2 {
   .image-lightbox-preview {
     max-height: calc(92vh - 1.1rem);
     border-radius: 10px;
+  }
+}
+
+.donation {
+  grid-column: 1 / -1;
+  width: min(1120px, 92vw);
+  margin: 0 auto 1rem;
+}
+
+.donation-shell {
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+}
+
+.donation-header {
+  display: grid;
+  gap: 1rem;
+}
+
+.donation-kicker {
+  margin: 0 0 0.45rem;
+  color: var(--brand);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+.donation-intro {
+  margin: 0;
+  color: var(--muted);
+  max-width: 34ch;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.donation-intro-block {
+  display: grid;
+  gap: 0.75rem;
+  width: 100%;
+  align-content: start;
+  padding: 1.2rem 1.25rem;
+  border: 1px solid rgba(20, 83, 45, 0.12);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top right, rgba(20, 83, 45, 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 254, 248, 0.96));
+}
+
+.donation-purpose-intro {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.donation-purpose-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.donation-purpose-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.95rem;
+  padding: 0.28rem 0.68rem;
+  border: 1px solid rgba(20, 83, 45, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.donation-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.donation-grid {
+  display: grid;
+  gap: 1.1rem;
+  align-items: stretch;
+}
+
+.donation-method {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-rows: auto auto 1fr auto;
+  align-content: start;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 254, 248, 0.98)),
+    #fffef8;
+  box-shadow: 0 12px 28px rgba(31, 42, 46, 0.06);
+  height: 100%;
+  font-size: 0.98rem;
+}
+
+.donation-method p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.donation-method-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.donation-method-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: rgba(20, 83, 45, 0.1);
+  color: var(--accent);
+  flex: 0 0 auto;
+}
+
+.donation-method-icon svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+.donation-method-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.donation-method-head h3 {
+  margin: 0;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+}
+
+.donation-method-head::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(20, 83, 45, 0.2), rgba(20, 83, 45, 0));
+}
+
+.donation-method-body {
+  display: grid;
+  align-content: start;
+}
+
+.donation-method-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.6rem;
+  margin-top: auto;
+}
+
+.donation-method-actions .cta-button {
+  min-width: 12.25rem;
+  justify-content: center;
+}
+
+.donation-details {
+  margin: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.donation-details div {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid rgba(210, 199, 184, 0.9);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.donation-details dt {
+  font-size: 0.74rem;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.donation-details dd {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.donation-detail-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  justify-content: space-between;
+}
+
+.donation-iban {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.98rem;
+  letter-spacing: 0.03em;
+  word-break: break-word;
+}
+
+.donation-copy-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--accent);
+  cursor: pointer;
+  flex: 0 0 auto;
+  position: relative;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.donation-copy-icon:hover,
+.donation-copy-icon:focus-visible {
+  border-color: #9fb9a6;
+  background: #f3faf5;
+}
+
+.donation-copy-icon.is-copied {
+  background: #dcfce7;
+  border-color: #4ade80;
+  color: #166534;
+  box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.18);
+  transform: scale(1.04);
+}
+
+.donation-copy-icon.is-copied::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.42rem;
+  height: 0.8rem;
+  border-right: 2.4px solid currentColor;
+  border-bottom: 2.4px solid currentColor;
+  transform: translate(-50%, -58%) rotate(45deg);
+}
+
+.donation-copy-icon.is-copied svg {
+  opacity: 0;
+}
+
+.donation-copy-icon svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+  transition: opacity 140ms ease;
+}
+
+.donation-bank-layout {
+  display: grid;
+  gap: 0.9rem;
+  align-items: start;
+  grid-template-columns: 1fr;
+  position: relative;
+}
+
+.donation-bank-copy {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.donation-copy-status {
+  min-height: 1.2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.donation-qr {
+  margin: 0.25rem 0 0;
+  display: grid;
+  gap: 0.35rem;
+  justify-items: start;
+}
+
+.donation-qr-top {
+  justify-items: center;
+}
+
+.donation-qr-top figcaption {
+  text-align: center;
+}
+
+.donation-qr-code {
+  width: min(100%, 110px);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  padding: 0.2rem;
+}
+
+.donation-qr-code svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.donation-qr figcaption {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.donation-paypal-button {
+  width: 100%;
+  min-width: 0;
+  max-width: 18rem;
+  text-align: center;
+  background: linear-gradient(135deg, #14532d, #1c7c43);
+}
+
+.donation-paypal-form {
+  margin: 0;
+}
+
+@media (min-width: 860px) {
+  .donation-shell {
+    grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.5fr);
+    gap: 1.2rem;
+  }
+
+  .donation-bank-layout {
+    min-height: 9rem;
+    padding-right: 8.25rem;
+  }
+
+  .donation-qr-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7rem;
+    margin: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .donation-method-head {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .donation-method-head::after {
+    display: none;
+  }
+
+  .donation-bank-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .donation-method-actions .cta-button {
+    width: 100%;
+    max-width: none;
   }
 }

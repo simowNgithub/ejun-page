@@ -390,6 +390,158 @@ function initImageLightbox() {
   });
 }
 
+
+function copyTextWithFallback(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text);
+  }
+
+  const fallbackInput = document.createElement("textarea");
+  fallbackInput.value = text;
+  fallbackInput.setAttribute("readonly", "");
+  fallbackInput.style.position = "fixed";
+  fallbackInput.style.opacity = "0";
+  fallbackInput.style.pointerEvents = "none";
+  document.body.append(fallbackInput);
+  fallbackInput.focus();
+  fallbackInput.select();
+
+  const successful = document.execCommand("copy");
+  fallbackInput.remove();
+
+  if (!successful) {
+    throw new Error("Copy fallback failed");
+  }
+}
+
+function initDonationCopy() {
+  const copyButtons = Array.from(document.querySelectorAll("[data-copy-text]"));
+  if (copyButtons.length === 0) {
+    return;
+  }
+
+  copyButtons.forEach((copyButton) => {
+    const status = copyButton.parentElement?.querySelector("[data-copy-status]") || document.querySelector("[data-copy-status]");
+    const targetId = copyButton.getAttribute("data-copy-target");
+    const targetElement = targetId ? document.getElementById(targetId) : null;
+
+    if (!targetElement) {
+      return;
+    }
+
+    copyButton.addEventListener("click", async () => {
+      const rawText = targetElement.textContent || "";
+      const text = rawText.replace(/\s+/g, " ").trim();
+
+      if (!text) {
+        if (status) {
+          status.textContent = "Feld nicht gefunden.";
+        }
+        return;
+      }
+
+      try {
+        await copyTextWithFallback(text);
+        copyButton.classList.add("is-copied");
+        window.setTimeout(() => {
+          copyButton.classList.remove("is-copied");
+        }, 1800);
+      } catch (_error) {
+        if (status) {
+          status.textContent = "Kopieren nicht moeglich.";
+        }
+      }
+    });
+  });
+}
+
+function buildEpcGirocodePayload({ bic, recipient, iban, reference }) {
+  return [
+    "BCD",
+    "002",
+    "1",
+    "SCT",
+    bic,
+    recipient,
+    iban,
+    "",
+    "",
+    "",
+    reference,
+    "",
+  ].join("\n");
+}
+
+function renderDonationGirocode() {
+  const container = document.querySelector("[data-girocode]");
+  if (!container || typeof qrcode !== "function") {
+    return null;
+  }
+
+  const recipient = (container.getAttribute("data-recipient") || "").trim();
+  const iban = (container.getAttribute("data-iban") || "").replace(/\s+/g, "").trim();
+  const bic = (container.getAttribute("data-bic") || "").trim();
+  const reference = (container.getAttribute("data-reference") || "").trim();
+
+  if (!recipient || !iban || !bic || !reference) {
+    return null;
+  }
+
+  const payload = buildEpcGirocodePayload({ bic, recipient, iban, reference });
+  const qr = qrcode(0, "M");
+  qr.addData(payload, "Byte");
+  qr.make();
+
+  container.innerHTML = qr.createSvgTag({
+    scalable: true,
+    margin: 0,
+    cellSize: 4,
+  });
+
+  container.dataset.girocodePayload = payload;
+  return container;
+}
+
+function initDonationGirocodeDownload() {
+  const downloadButton = document.querySelector("[data-download-girocode]");
+  if (!downloadButton) {
+    return;
+  }
+
+  downloadButton.addEventListener("click", () => {
+    const targetId = downloadButton.getAttribute("data-girocode-target");
+    const container = targetId ? document.getElementById(targetId) : null;
+    const svg = container?.querySelector("svg");
+    const status =
+      downloadButton.parentElement?.querySelector("[data-copy-status]") ||
+      document.querySelector("[data-copy-status]");
+
+    if (!container || !svg) {
+      if (status) {
+        status.textContent = "Girocode nicht verfuegbar.";
+      }
+      return;
+    }
+
+    const blob = new Blob([svg.outerHTML], { type: "image/svg+xml;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "girocode-ejun.svg";
+    document.body.append(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+
+    if (status) {
+      status.textContent = "Girocode geladen.";
+      window.setTimeout(() => {
+        status.textContent = "";
+      }, 2500);
+    }
+  });
+}
+
 async function loadNews() {
   const list = document.getElementById("news-list");
   const stamp = document.getElementById("last-updated");
@@ -424,3 +576,6 @@ initVisualSlider();
 initImageLightbox();
 initSuccessModal();
 initRegistrationForm();
+initDonationCopy();
+renderDonationGirocode();
+initDonationGirocodeDownload();
