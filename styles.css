@@ -1142,18 +1142,34 @@ h2 {
 
 @media (max-width: 640px) {
   .hero-full-inner {
-    align-items: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.7rem;
   }
 
   .hero-actions {
-    width: 100%;
+    width: auto;
     margin-left: 0;
     display: flex;
+    justify-self: end;
   }
 
   .hero-support-btn {
     min-width: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border-radius: 14px;
+  }
+
+  .hero-support-text {
+    display: none;
+  }
+
+  .hero-support-icon {
+    width: 1.05rem;
+    height: 1.05rem;
   }
 
   .action-cta-group {
@@ -1312,6 +1328,30 @@ h2 {
     linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 254, 248, 0.96));
 }
 
+.donation-trust-list {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.donation-trust-item {
+  display: grid;
+  gap: 0.18rem;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid rgba(20, 83, 45, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.donation-trust-item strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.98rem;
+}
+
+.donation-trust-item span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 .donation-purpose-intro {
   margin: 0;
   color: var(--ink);
@@ -1362,6 +1402,20 @@ h2 {
   box-shadow: 0 12px 28px rgba(31, 42, 46, 0.06);
   height: 100%;
   font-size: 0.98rem;
+}
+
+.donation-method-paypal {
+  background:
+    radial-gradient(circle at top right, rgba(12, 74, 110, 0.12), transparent 35%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 254, 248, 0.98)),
+    #fffef8;
+}
+
+.donation-method-bank {
+  background:
+    radial-gradient(circle at top right, rgba(20, 83, 45, 0.14), transparent 35%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 254, 248, 0.98)),
+    #fffef8;
 }
 
 .donation-method p {
@@ -1604,9 +1658,28 @@ h2 {
     gap: 1.2rem;
   }
 
+  .donation-header {
+    position: sticky;
+    top: 1.25rem;
+  }
+
+  .donation-intro-block {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .donation-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+
+  .donation-method {
+    padding: 1.25rem;
+  }
+
   .donation-bank-layout {
     min-height: 9rem;
-    padding-right: 8.25rem;
+    padding-right: 8.5rem;
   }
 
   .donation-qr-top {
@@ -1615,6 +1688,147 @@ h2 {
     right: 0;
     width: 7rem;
     margin: 0;
+  }
+}
+
+.article-layout {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+  padding: 1.2rem 0 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.article-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.8fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.article-card {
+  padding: 1.5rem;
+}
+
+.article-intro-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.article-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(194, 65, 12, 0.1);
+  border: 1px solid rgba(194, 65, 12, 0.18);
+  color: var(--brand);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.article-summary {
+  margin: 0;
+  color: #26323b;
+  font-size: 1.04rem;
+  line-height: 1.65;
+  max-width: 60ch;
+}
+
+.article-side-card {
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+  background:
+    radial-gradient(circle at top right, rgba(20, 83, 45, 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 254, 248, 0.96));
+}
+
+.article-side-card p {
+  margin: 0;
+}
+
+.article-side-label {
+  color: var(--brand);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.article-side-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.article-card h2,
+.article-card h3 {
+  margin-top: 0;
+}
+
+.article-card p,
+.article-card li {
+  max-width: 72ch;
+}
+
+.article-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.article-note {
+  margin-top: 1rem;
+  padding: 1rem 1.05rem;
+  border-radius: 18px;
+  border: 1px solid rgba(20, 83, 45, 0.14);
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.article-note p + p {
+  margin-top: 0.85rem;
+}
+
+.article-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 879px) {
+  .article-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .article-layout {
+    padding-top: 1rem;
+  }
+
+  .article-card {
+    padding: 1.1rem;
+  }
+
+  .article-links .cta-button {
+    width: 100%;
   }
 }
 
