@@ -302,6 +302,27 @@ function initVisualSlider() {
   updateSlider();
 }
 
+function appendNewsHighlight(target, value) {
+  const parts = String(value).split(/(Windpark 2|Windpark 3)/g);
+
+  parts.forEach((part) => {
+    if (!part) {
+      return;
+    }
+
+    if (part === "Windpark 2" || part === "Windpark 3") {
+      const highlight = document.createElement("span");
+      highlight.className =
+        part === "Windpark 2" ? "news-park-highlight news-park-2" : "news-park-highlight news-park-3";
+      highlight.textContent = part;
+      target.append(highlight);
+      return;
+    }
+
+    target.append(document.createTextNode(part));
+  });
+}
+
 function renderNewsEntries(list, entries, visibleCount, step) {
   list.innerHTML = "";
 
@@ -320,7 +341,7 @@ function renderNewsEntries(list, entries, visibleCount, step) {
 
     const title = document.createElement("span");
     title.className = "news-title";
-    title.textContent = entry.title;
+    appendNewsHighlight(title, entry.title);
 
     const text = document.createElement("p");
     text.className = "news-text";

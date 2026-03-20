@@ -37,7 +37,7 @@
               und Umzingelungsgutachten.
             </p>
             <p class="donation-purpose-intro">
-              Jeder Beitrag fliesst direkt in diese Arbeitsschwerpunkte:
+              Jeder Beitrag fließt direkt in diese Arbeitsschwerpunkte:
             </p>
             <div class="donation-purpose-list">
               <span>Klage</span>
@@ -49,162 +49,150 @@
               Du kannst direkt online schenken oder die Überweisungsdaten inklusive Verwendungszweck bequem kopieren.
             </p>
             <div class="donation-trust-list" aria-label="Vorteile der Unterstützung">
-              <div class="donation-trust-item">
-                <strong>Direkt einsetzbar</strong>
-                <span>Beiträge fließen in laufende rechtliche und fachliche Arbeit der Initiative.</span>
-              </div>
-              <div class="donation-trust-item">
-                <strong>Für Desktop optimiert</strong>
-                <span>Auf größeren Bildschirmen bleiben Übersicht, Zahlungswege und Bankdaten gleichzeitig sichtbar.</span>
-              </div>
-              <div class="donation-trust-item">
-                <strong>Schnell kopierbar</strong>
-                <span>IBAN, BIC, Empfänger und Verwendungszweck sind einzeln mit einem Klick verfügbar.</span>
-              </div>
             </div>
           </div>
         </div>
 
         <div class="donation-grid">
-          <article class="donation-method donation-method-paypal" aria-labelledby="paypal-title">
-          <div class="donation-method-head">
-            <div class="donation-method-title">
-              <span class="donation-method-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7.2 4h8.22c2.95 0 5 2.2 4.46 5.07-.57 3-3.05 4.8-6.08 4.8h-2.6c-.43 0-.8.31-.88.74L9.6 19H5.95l1.7-10.38A1.03 1.03 0 0 1 8.67 7.8h4.4c1.72 0 2.61.88 2.35 2.28-.25 1.36-1.34 2.15-3.02 2.15h-.87l-.3 1.76h1.3c3.54 0 6.33-1.57 7-5.46C20.18 4.88 18.1 2 14.3 2H8.06L7.2 4Z"></path>
-                </svg>
-              </span>
-              <h3 id="paypal-title">PayPal</h3>
+          <article class="donation-method donation-method-bank" aria-labelledby="bank-title">
+            <div class="donation-method-head">
+              <div class="donation-method-title">
+                <span class="donation-method-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 7.5 12 3l9 4.5v2H3v-2Zm1 4h2v6H4v-6Zm5 0h2v6H9v-6Zm5 0h2v6h-2v-6Zm5 0h2v6h-2v-6ZM3 19h18v2H3v-2Z"></path>
+                  </svg>
+                </span>
+                <h3 id="bank-title">Banküberweisung</h3>
+              </div>
             </div>
-          </div>
-          <p>Direkt online schenken. PayPal öffnet in einem neuen Tab.</p>
+            <p>IBAN kopieren oder QR-Code scannen.</p>
 
-          <div class="donation-method-body">
-            <form id="paypal-donate-form" class="donation-paypal-form" action="https://www.paypal.com/donate" method="post" target="_blank">
-              <input type="hidden" name="business" value="kontakt@buergerinitiative-ejun.de" />
-              <input type="hidden" name="currency_code" value="EUR" />
-            </form>
-          </div>
+            <div class="donation-method-body donation-bank-layout">
+              <figure class="donation-qr donation-qr-top">
+                <div
+                  class="donation-qr-code"
+                  id="donation-girocode"
+                  data-girocode
+                  data-recipient="Andreas Berleb"
+                  data-iban="DE58500240240504190201"
+                  data-bic="DEFFDEFFXXX"
+                  data-reference="Schenkung EjUn"
+                  aria-label="Girocode für Banking-App"
+                ></div>
+                <figcaption>Girocode für Banking-App.</figcaption>
+              </figure>
 
-          <div class="donation-method-actions">
-            <button class="cta-button donation-paypal-button" type="submit" form="paypal-donate-form">Mit PayPal schenken</button>
-          </div>
+              <div class="donation-bank-copy">
+                <dl class="donation-details">
+                  <div>
+                    <dt>Empfänger</dt>
+                    <dd class="donation-detail-inline">
+                      <span id="donation-recipient">Andreas Berleb</span>
+                      <button
+                        type="button"
+                        class="donation-copy-icon"
+                        data-copy-text
+                        data-copy-target="donation-recipient"
+                        aria-label="Empfänger kopieren"
+                        title="Empfänger kopieren"
+                      >
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M9 9h10v12H9z"></path>
+                          <path d="M5 3h10v2H7v10H5z"></path>
+                        </svg>
+                      </button>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>IBAN</dt>
+                    <dd class="donation-detail-inline">
+                      <span id="donation-iban" class="donation-iban">DE58 5002 4024 0504 1902 01</span>
+                      <button
+                        type="button"
+                        class="donation-copy-icon"
+                        data-copy-text
+                        data-copy-target="donation-iban"
+                        aria-label="IBAN kopieren"
+                        title="IBAN kopieren"
+                      >
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M9 9h10v12H9z"></path>
+                          <path d="M5 3h10v2H7v10H5z"></path>
+                        </svg>
+                      </button>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>BIC</dt>
+                    <dd class="donation-detail-inline">
+                      <span id="donation-bic">DEFFDEFFXXX</span>
+                      <button
+                        type="button"
+                        class="donation-copy-icon"
+                        data-copy-text
+                        data-copy-target="donation-bic"
+                        aria-label="BIC kopieren"
+                        title="BIC kopieren"
+                      >
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M9 9h10v12H9z"></path>
+                          <path d="M5 3h10v2H7v10H5z"></path>
+                        </svg>
+                      </button>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Verwendungszweck</dt>
+                    <dd class="donation-detail-inline">
+                      <span id="donation-reference">Schenkung EjUn</span>
+                      <button
+                        type="button"
+                        class="donation-copy-icon"
+                        data-copy-text
+                        data-copy-target="donation-reference"
+                        aria-label="Verwendungszweck kopieren"
+                        title="Verwendungszweck kopieren"
+                      >
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M9 9h10v12H9z"></path>
+                          <path d="M5 3h10v2H7v10H5z"></path>
+                        </svg>
+                      </button>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+
+            <div class="donation-method-actions">
+              <button type="button" class="cta-button" data-download-girocode data-girocode-target="donation-girocode">Girocode laden</button>
+              <span class="donation-copy-status" data-copy-status role="status" aria-live="polite"></span>
+            </div>
           </article>
 
-          <article class="donation-method donation-method-bank" aria-labelledby="bank-title">
-          <div class="donation-method-head">
-            <div class="donation-method-title">
-              <span class="donation-method-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 7.5 12 3l9 4.5v2H3v-2Zm1 4h2v6H4v-6Zm5 0h2v6H9v-6Zm5 0h2v6h-2v-6Zm5 0h2v6h-2v-6ZM3 19h18v2H3v-2Z"></path>
-                </svg>
-              </span>
-              <h3 id="bank-title">Banküberweisung</h3>
+          <article class="donation-method donation-method-paypal" aria-labelledby="paypal-title">
+            <div class="donation-method-head">
+              <div class="donation-method-title">
+                <span class="donation-method-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.2 4h8.22c2.95 0 5 2.2 4.46 5.07-.57 3-3.05 4.8-6.08 4.8h-2.6c-.43 0-.8.31-.88.74L9.6 19H5.95l1.7-10.38A1.03 1.03 0 0 1 8.67 7.8h4.4c1.72 0 2.61.88 2.35 2.28-.25 1.36-1.34 2.15-3.02 2.15h-.87l-.3 1.76h1.3c3.54 0 6.33-1.57 7-5.46C20.18 4.88 18.1 2 14.3 2H8.06L7.2 4Z"></path>
+                  </svg>
+                </span>
+                <h3 id="paypal-title">PayPal</h3>
+              </div>
             </div>
-          </div>
-          <p>IBAN kopieren oder QR-Code scannen.</p>
+            <p>Direkt online schenken. PayPal öffnet in einem neuen Tab.</p>
 
-          <div class="donation-method-body donation-bank-layout">
-            <figure class="donation-qr donation-qr-top">
-              <div
-                class="donation-qr-code"
-                id="donation-girocode"
-                data-girocode
-                data-recipient="Andreas Berleb"
-                data-iban="DE58500240240504190201"
-                data-bic="DEFFDEFFXXX"
-                data-reference="Schenkung EjUn"
-                aria-label="Girocode für Banking-App"
-              ></div>
-              <figcaption>Girocode für Banking-App.</figcaption>
-            </figure>
-
-            <div class="donation-bank-copy">
-              <dl class="donation-details">
-                <div>
-                  <dt>Empfänger</dt>
-                  <dd class="donation-detail-inline">
-                    <span id="donation-recipient">Andreas Berleb</span>
-                    <button
-                      type="button"
-                      class="donation-copy-icon"
-                      data-copy-text
-                      data-copy-target="donation-recipient"
-                      aria-label="Empfänger kopieren"
-                      title="Empfänger kopieren"
-                    >
-                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M9 9h10v12H9z"></path>
-                        <path d="M5 3h10v2H7v10H5z"></path>
-                      </svg>
-                    </button>
-                  </dd>
-                </div>
-                <div>
-                  <dt>IBAN</dt>
-                  <dd class="donation-detail-inline">
-                    <span id="donation-iban" class="donation-iban">DE58 5002 4024 0504 1902 01</span>
-                    <button
-                      type="button"
-                      class="donation-copy-icon"
-                      data-copy-text
-                      data-copy-target="donation-iban"
-                      aria-label="IBAN kopieren"
-                      title="IBAN kopieren"
-                    >
-                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M9 9h10v12H9z"></path>
-                        <path d="M5 3h10v2H7v10H5z"></path>
-                      </svg>
-                    </button>
-                  </dd>
-                </div>
-                <div>
-                  <dt>BIC</dt>
-                  <dd class="donation-detail-inline">
-                    <span id="donation-bic">DEFFDEFFXXX</span>
-                    <button
-                      type="button"
-                      class="donation-copy-icon"
-                      data-copy-text
-                      data-copy-target="donation-bic"
-                      aria-label="BIC kopieren"
-                      title="BIC kopieren"
-                    >
-                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M9 9h10v12H9z"></path>
-                        <path d="M5 3h10v2H7v10H5z"></path>
-                      </svg>
-                    </button>
-                  </dd>
-                </div>
-                <div>
-                  <dt>Verwendungszweck</dt>
-                  <dd class="donation-detail-inline">
-                    <span id="donation-reference">Schenkung EjUn</span>
-                    <button
-                      type="button"
-                      class="donation-copy-icon"
-                      data-copy-text
-                      data-copy-target="donation-reference"
-                      aria-label="Verwendungszweck kopieren"
-                      title="Verwendungszweck kopieren"
-                    >
-                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M9 9h10v12H9z"></path>
-                        <path d="M5 3h10v2H7v10H5z"></path>
-                      </svg>
-                    </button>
-                  </dd>
-                </div>
-              </dl>
+            <div class="donation-method-body">
+              <form id="paypal-donate-form" class="donation-paypal-form" action="https://www.paypal.com/donate" method="post" target="_blank">
+                <input type="hidden" name="business" value="kontakt@buergerinitiative-ejun.de" />
+                <input type="hidden" name="currency_code" value="EUR" />
+              </form>
             </div>
-          </div>
 
-          <div class="donation-method-actions">
-            <button type="button" class="cta-button" data-download-girocode data-girocode-target="donation-girocode">Girocode laden</button>
-            <span class="donation-copy-status" data-copy-status role="status" aria-live="polite"></span>
-          </div>
+            <div class="donation-method-actions">
+              <button class="cta-button donation-paypal-button" type="submit" form="paypal-donate-form">Mit PayPal schenken</button>
+            </div>
           </article>
         </div>
       </div>

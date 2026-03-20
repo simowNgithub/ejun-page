@@ -1,27 +1,33 @@
-﻿[
+[
   {
     "date": "2026-03-06",
     "title": "Antwortschreiben des Staatsministeriums zur Petition WI.0084.19",
-    "text": "Das StMWi teilt mit, dass laut vorliegenden Fachgutachten keine erhebliche Umfassungswirkung mit unzumutbarer Beeinträchtigung zu erwarten sei. Gleichzeitig sei das Verfahren im RPV Donau-Wald noch nicht abgeschlossen.",
+    "text": "Das StMWi teilt mit, dass laut vorliegenden Fachgutachten keine erhebliche Umfassungswirkung mit unzumutbarer Beeintraechtigung zu erwarten sei. Gleichzeitig sei das Verfahren im RPV Donau-Wald noch nicht abgeschlossen.",
     "url": "sources/2026-03-06_antwortschreiben-ministerium-petition-wi-0084-19.pdf"
   },
   {
     "date": "2026-02-10",
-    "title": "Windpark 3 (Hayforst): UVP ist durchzuführen",
-    "text": "Die allgemeine Vorprüfung ergab, dass erhebliche nachteilige Umweltauswirkungen möglich sind; ausschlaggebend sind unter anderem die Rodungen, Habitatverluste und Unsicherheiten bei Kompensationsmaßnahmen.",
+    "title": "Windpark 3 (Hayforst): UVP ist durchzufuehren",
+    "text": "Die allgemeine Vorpruefung ergab, dass erhebliche nachteilige Umweltauswirkungen moeglich sind; ausschlaggebend sind unter anderem die Rodungen, Habitatverluste und Unsicherheiten bei Kompensationsmassnahmen.",
     "url": "http://www.uvp-verbund.de/trefferanzeige?docuuid=1697277f-1ff2-4c6b-817b-d895ab5a6db7&q=&ct=true&rstart=0&currentSelectorPage=1&f=type%3Aflurbereinigung%3Bprocedure%3Aprocedure_10_time%3Bprocedure%3Aprocedure_12_time%3Bprocedure%3Aprocedure_13_time%3Bprocedure%3Aprocedure_14_time%3Bprocedure%3Aprocedure_11_time%3B&category=chemie%3Bholzzellstoff%3Bkernenergie%3Bbaustoffe%3Benergie%3Bbauvorhaben%3Bflurbereinigung&modtime=last_month%3Blast_year&procedure=obj_class_zv&provider=ni%3Bby"
   },
   {
+    "date": "2026-02-02",
+    "title": "Windpark 2: Gemeinderat Laberweinting gegen das Projekt",
+    "text": "Im Sitzungsbericht vom 2. Februar 2026 wird der Gemeinderatsbeschluss gegen Windpark 2 als kommunales Signal zur Verhinderung des Vorhabens dokumentiert.",
+    "url": "https://www.laberweinting.de/buergerservice/gemeinderat/sitzungsberichte/sitzungsbericht-vom-2-februar-2026#:~:text=Jedoch%20muss%20die,nicht%20fertiggestellt%20wurde."
+  },
+  {
     "date": "2026-02-01",
-    "title": "Unterlagen und Neuigkeiten veröffentlicht",
-    "text": "EjUn bündelt Petition, BR24-Beitrag, Stellungnahmen und weitere Hintergrunddokumente in einem Sammelbeitrag im Bereich Dokumente/News.",
+    "title": "Unterlagen und Neuigkeiten veroeffentlicht",
+    "text": "EjUn buendelt Petition, BR24-Beitrag, Stellungnahmen und weitere Hintergrunddokumente in einem Sammelbeitrag im Bereich Dokumente/News.",
     "url": "sources/ejun/2026-02-01_unterlagen-neuigkeiten.html",
     "sourceUrl": "https://www.buergerinitiative-ejun.de/docs/post/unterlagen-neuigkeiten-vom-01.02.2026"
   },
   {
     "date": "2025-12-11",
     "title": "Petition: Antwort der Regierung",
-    "text": "Die Bürgerinitiative verlinkt das Dokument zum Ergebnis der Petition als eigenes PDF.",
+    "text": "Die Buergerinitiative verlinkt das Dokument zum Ergebnis der Petition als eigenes PDF.",
     "url": "sources/ejun/2025-12-11_petition-antwort-ergebnis-der-regierung.pdf",
     "sourceUrl": "https://www.buergerinitiative-ejun.de/2025_12_11%20Petition-%20Antwort%20Ergebnis%20der%20Regierung.pdf"
   },
@@ -40,9 +46,21 @@
     "sourceUrl": "https://www.buergerinitiative-ejun.de/2025_10_06%20Stellungnahme%20EjUn%20gegen%20Planungsverband%20Donau-Wald.pdf"
   },
   {
+    "date": "2025-09-02",
+    "title": "Windpark 3: Stadtrat Geiselhoering gegen das Projekt",
+    "text": "Der Stadtrat Geiselhoering fasst am 2. September 2025 einen kommunalen Beschluss gegen Windpark 3.",
+    "url": "index.html#projects-title"
+  },
+  {
+    "date": "2025-07-29",
+    "title": "Windpark 3: Gemeinderat Mengkofen gegen das Projekt",
+    "text": "Der Gemeinderat Mengkofen positioniert sich am 29. Juli 2025 gegen Windpark 3 und setzt damit ein weiteres kommunales Signal zur Verhinderung.",
+    "url": "index.html#projects-title"
+  },
+  {
     "date": "2025-06-06",
-    "title": "Öffentliche Petition veröffentlicht",
-    "text": "Die öffentliche Petition zur Windkraft-Umzingelung von Franken-Neuhofen wird als vollständiges PDF bereitgestellt.",
+    "title": "Oeffentliche Petition veroeffentlicht",
+    "text": "Die oeffentliche Petition zur Windkraft-Umzingelung von Franken-Neuhofen wird als vollstaendiges PDF bereitgestellt.",
     "url": "sources/ejun/2025-06-06_public-petition-windkraft-umzingelung-franken-neuhofen.pdf",
     "sourceUrl": "https://www.buergerinitiative-ejun.de/Dokumente/2025_06_06%20Public%20Petition%20Windkraft%20Umzingelung%20Franken-Neuhofen.pdf"
   },
@@ -56,14 +74,14 @@
   {
     "date": "2025-05-11",
     "title": "Schreiben an Landrat Laumer nach rundem Tisch",
-    "text": "EjUn legt ein Schreiben zur Entlastung von Franken-Neuhofen durch optimierte Planung vor und verweist darin auf mehrere Anhänge als Argumentationsgrundlage.",
+    "text": "EjUn legt ein Schreiben zur Entlastung von Franken-Neuhofen durch optimierte Planung vor und verweist darin auf mehrere Anhaenge als Argumentationsgrundlage.",
     "url": "sources/ejun/2025-05-11_entlastung-franken-neuhofen-durch-optimierte-planung-windvorrangflaechen.pdf",
     "sourceUrl": "https://www.buergerinitiative-ejun.de/Dokumente/2025_05%20Entlastung%20Franken-Neuhofen%20durch%20optimierte%20Planung%20Windvorrangfl%C3%A4chen.pdf"
   },
   {
     "date": "2025-03-12",
     "title": "Gutachten zu Umfassung und Umzingelung verlinkt",
-    "text": "Als Anhang zum Schreiben an den Landrat wird ein Gutachten von Martin Stümpfig zur Umfassung und Umzingelung referenziert.",
+    "text": "Als Anhang zum Schreiben an den Landrat wird ein Gutachten von Martin Stuempfig zur Umfassung und Umzingelung referenziert.",
     "url": "sources/ejun/2025-03-12_stuempfig-gutachten-umfassung-2021.pdf",
     "sourceUrl": "https://www.buergerinitiative-ejun.de/Dokumente/2025_03_12%20St%C3%BCmpfig-%20Gutachten%20Umfassung%202021.pdf"
   },
@@ -77,29 +95,35 @@
   {
     "date": "2025-03-01",
     "title": "Hintergrundpapier zu Wirtschaftlichkeit und Umzingelung",
-    "text": "Ein im Dateinamen nur auf März 2025 datiertes Hintergrundpapier zur Unwirtschaftlichkeit und umzingelnden Wirkung von Windkraftanlagen wird als Anhang geführt.",
+    "text": "Ein im Dateinamen nur auf Maerz 2025 datiertes Hintergrundpapier zur Unwirtschaftlichkeit und umzingelnden Wirkung von Windkraftanlagen wird als Anhang gefuehrt.",
     "url": "sources/ejun/2025-03_unwirtschaftlichkeit-und-umzingelnde-wirkung-von-wka-aus-2013.pdf",
     "sourceUrl": "https://www.buergerinitiative-ejun.de/Dokumente/2025_03%20Unwirtschaftlichkeit%20und%20umzingelnde%20Wirkung%20von%20WKA%20aus%202013.pdf.pdf"
   },
   {
     "date": "2024-12-16",
-    "title": "Rückmeldung des Planungsverbands Donau-Wald",
-    "text": "Die Rückmeldung des Planungsverbands zur Thematik Umzingelung ist als PDF hinterlegt.",
+    "title": "Rueckmeldung des Planungsverbands Donau-Wald",
+    "text": "Die Rueckmeldung des Planungsverbands zur Thematik Umzingelung ist als PDF hinterlegt.",
     "url": "sources/ejun/2024-12-16_antwort-laumer-regionaler-planungsverband.pdf",
     "sourceUrl": "https://www.buergerinitiative-ejun.de/Dokumente/2024_12%20Antwort%20Laumer-%20Regionaler%20Planungsverband.pdf"
   },
   {
     "date": "2024-07-09",
-    "title": "Bürgermeisterschreiben zu Windvorranggebieten",
-    "text": "Ein Bürgermeisterschreiben zu Windvorranggebieten wird als ergänzender Anhang verlinkt.",
+    "title": "Buergermeisterschreiben zu Windvorranggebieten",
+    "text": "Ein Buergermeisterschreiben zu Windvorranggebieten wird als ergaenzender Anhang verlinkt.",
     "url": "sources/ejun/2024-07-09_windvorranggebiete-buergermeisterschreiben.pdf",
     "sourceUrl": "https://www.buergerinitiative-ejun.de/Dokumente/2024_07_09%20Windvorranggebiete%20B%C3%BCrgermeisterschreiben.pdf"
   },
   {
     "date": "2024-06-23",
     "title": "Treffen vom 23.06.2024",
-    "text": "Im frühen Treffen dokumentiert die Initiative politische Gespräche, geplante Flyer und Plakate sowie den Ausbau der Informationsarbeit in den betroffenen Gemeinden.",
+    "text": "Im fruehen Treffen dokumentiert die Initiative politische Gespraeche, geplante Flyer und Plakate sowie den Ausbau der Informationsarbeit in den betroffenen Gemeinden.",
     "url": "treffen-23-06-2024.html",
     "sourceUrl": "https://www.buergerinitiative-ejun.de/docs/post/treffen-vom-23.06.2024"
+  },
+  {
+    "date": "2024-06-03",
+    "title": "Windpark 3: Gemeinderat Laberweinting gegen das Projekt",
+    "text": "Der Gemeinderat Laberweinting beschliesst am 3. Juni 2024 eine ablehnende Position gegen Teile von Windpark 3.",
+    "url": "index.html#projects-title"
   }
 ]
